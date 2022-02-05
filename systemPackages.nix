@@ -3,18 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     # Hardware
-    pulseaudio
-    pulseaudio-ctl
-    brightnessctl
-    openssh
     ntp
 
-    # Terminal & Shell
+    # Terminal
     alacritty
-    gitstatus
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    zsh
 
     # Utilities
     unzip
@@ -22,40 +14,20 @@
     wget
     curl
     git
-    sxiv
-    rofi
-    papirus-icon-theme
-    neofetch
-    htop
     exa
     bat
 
     # Code Editor
-    vscodium
-    emacs
-    neovim
+    nano
     vim
 
     # File Manager
-    xfce.thunar
-    xfce.thunar-volman
     ranger
 
     # Browser
-    # firefox
     # w3m
-    ungoogled-chromium
-
-    # Social Media
-    # whatsapp-for-linux
-    tdesktop
-
-    # Desktop
-    # gpicview
-    # gimp
-    # spotify
-    lxappearance
-    gnome.gnome-screenshot
+    # ungoogled-chromium
+    firefox
   ];
 
   fonts.fonts = with pkgs; [

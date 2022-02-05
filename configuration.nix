@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
       ./systemPackages.nix
       ./user.nix
@@ -53,7 +52,7 @@
       enable = true;
     };
 
-    interfaces.ens33 = {
+    interfaces.wlp2s0 = {
       useDHCP = true;
     };
   };
@@ -65,7 +64,7 @@
 
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "la-latin1";
+    keyMap = "us";
   };
 
   services = {
@@ -75,12 +74,15 @@
 
     xserver = {
       enable = true;
-      layout = "latam";
+      layout = "us";
       libinput.enable = true;
 
       displayManager = {
         lightdm.enable = false;
+        sddm.enable = false;
         startx.enable = true;
+
+        defaultSession = "none+qtile";
       };
 
       windowManager = {

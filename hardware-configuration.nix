@@ -4,26 +4,29 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ohci_pci" "ehci_pci" "usbhid" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/70210b55-0f55-4996-a07e-a8d45f825223";
+    { device = "/dev/disk/by-uuid/8cfe5e99-d62a-4a4f-a9ae-8abd0a7837e1";
       fsType = "ext4";
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/CF71-01B4";
+    { device = "/dev/disk/by-uuid/0860-2A2A";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/28ae425a-fa56-465a-aac2-0028100faf70"; }
+    [ { device = "/dev/disk/by-uuid/162c0b8b-e58f-4e38-bc64-f6a9c9a844c7"; }
     ];
 
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
