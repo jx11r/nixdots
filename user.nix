@@ -9,7 +9,7 @@
       isNormalUser = true;
       description = "Jair Sánchez";
       home = "/home/jx11r";
-      extraGroups = [ "Wheel" ];
+      extraGroups = [ "wheel" ];
 
       packages = with pkgs; [
         # Hardware
