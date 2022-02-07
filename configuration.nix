@@ -46,15 +46,15 @@
 
   networking = {
     hostName = "nixos";
-    useDHCP = false;
+    # useDHCP = false;
 
     networkmanager = {
       enable = true;
     };
 
-    interfaces.ens33 = {
-      useDHCP = true;
-    };
+    # interfaces.ens33 = {
+    #   useDHCP = true;
+    # };
   };
 
   time.timeZone = "America/Mexico_City";
