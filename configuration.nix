@@ -57,14 +57,17 @@
     # };
   };
 
-  time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.UTF-8";
-
   programs.zsh.enable = true;
 
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
+  };
+
+  time = {
+    timeZone = "America/Mexico_City";
+    hardwareClockInLocalTime = true;
   };
 
   services = {
