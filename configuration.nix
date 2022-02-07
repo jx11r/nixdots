@@ -18,7 +18,7 @@
         version = 2;
         devices = [ "nodev" ];
         efiSupport = true;
-        useOSProber = true;
+        useOSProber = false;
       };
 
       efi = {
