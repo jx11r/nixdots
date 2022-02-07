@@ -52,7 +52,7 @@
       enable = true;
     };
 
-    interfaces.wlp2s0 = {
+    interfaces.ens33 = {
       useDHCP = true;
     };
   };
@@ -79,8 +79,8 @@
 
       displayManager = {
         lightdm.enable = false;
-        sddm.enable = false;
-        startx.enable = true;
+        startx.enable = false;
+        sddm.enable = true;
 
         defaultSession = "none+qtile";
       };
