@@ -40,24 +40,19 @@
     };
   };
 
-  nixpkgs.config = {
-    allowBroken = true;
-    allowUnfree = true;
-  };
-
   networking = {
     hostName = "nixos";
     # wireless.enable = true;
     # useDHCP = false;
 
+    # interfaces.ens33 = {
+    #   useDHCP = true;
+    # };
+
     networkmanager = {
       enable = true;
       wifi.backend = "wpa_supplicant";
     };
-
-    # interfaces.ens33 = {
-    #   useDHCP = true;
-    # };
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -92,7 +87,13 @@
       };
 
       windowManager = {
-        qtile.enable = true;
+        session = [{
+          name = "qtile";
+          start = ''
+            ${pkgs.unstable.qtile}/bin/qtile start &
+            waitPID=$!
+          '';
+        }];
       };
     };
   };

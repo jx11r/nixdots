@@ -1,11 +1,28 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  unstableTarball = fetchTarball
+    https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+in
 {
+  nixpkgs.config = {
+    allowUnfree = true;
+
+    packageOverrides = pkgs: {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     # Hardware
     pulseaudio-ctl
     brightnessctl
     ntp
+
+    # Window Manager
+    unstable.qtile
 
     # Terminal
     # xterm
@@ -31,7 +48,7 @@
     # Code Editor
     # vscodium
     # emacs
-    neovim
+    unstable.neovim
     nano
     vim
 
@@ -47,7 +64,7 @@
 
     # Social Media
     # whatsapp-for-linux
-    tdesktop
+    unstable.tdesktop
 
     # Desktop
     # gpicview
