@@ -41,15 +41,18 @@
   };
 
   nixpkgs.config = {
+    allowBroken = true;
     allowUnfree = true;
   };
 
   networking = {
     hostName = "nixos";
+    # wireless.enable = true;
     # useDHCP = false;
 
     networkmanager = {
       enable = true;
+      wifi.backend = "wpa_supplicant";
     };
 
     # interfaces.ens33 = {
@@ -103,7 +106,5 @@
     };
   };
 
-  system = {
-    stateVersion = "21.11";
-  };
+  system.stateVersion = "21.11";
 }
