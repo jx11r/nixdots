@@ -5,14 +5,29 @@ let
     https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
 in
 {
-  nixpkgs.config = {
-    allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
 
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
+      packageOverrides = pkgs: {
+        unstable = import unstableTarball {
+          config = config.nixpkgs.config;
+        };
       };
     };
+
+    overlays = [
+      (self: super: {
+        qtile = super.qtile.overrideAttrs(oldAttrs: {
+          pythonPath = oldAttrs.pythonPath ++ (with self.python39Packages; [
+            setuptools
+            psutil
+            # iwlib (missing module)
+            dbus-next
+          ]);
+        });
+      })
+    ];
   };
 
   environment.systemPackages = with pkgs; [
