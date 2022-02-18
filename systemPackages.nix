@@ -24,6 +24,7 @@
     # Terminal
     # xterm
     alacritty
+    unstable.wezterm
     
     # Shell Utilities
     # gitstatus
@@ -31,13 +32,16 @@
     # zsh-syntax-highlighting
 
     # Utilities
+    papirus-icon-theme
+    neofetch
+    # scrot
+    maim
+    xclip
     unzip
     wget
     git
     sxiv
     rofi
-    papirus-icon-theme
-    neofetch
     htop
     exa
     bat
@@ -55,8 +59,9 @@
     ranger
 
     # Browser
-    # w3m
     # ungoogled-chromium
+    # qutebrowser
+    # w3m
     firefox
 
     # Social Media
