@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ../overlays ];
+
   nixpkgs.config = {
     allowUnfree = true;
 
@@ -19,7 +21,7 @@
     ntp
 
     # Window Manager
-    unstable.qtile
+    qtile
 
     # Terminal
     # xterm
