@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
-    ./system/default.nix
-    ./home/user.nix
+    ./system
+    ./home
   ];
 
   nix = {
