@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../overlays ];
-
   nixpkgs.config = {
     allowUnfree = true;
 
@@ -12,6 +10,8 @@
       };
     };
   };
+
+  imports = [ ../overlays ];
 
   environment.systemPackages = with pkgs; [
     # Hardware

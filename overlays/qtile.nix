@@ -1,5 +1,4 @@
 final: prev:
-
 let
   unwrapped = prev.qtile.passthru.unwrapped.overrideAttrs (old: {
     patches = (old.patches or [ ]) ++ [

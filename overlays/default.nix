@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 let
   overlays = [
     (import ./qtile.nix)
