@@ -2,29 +2,17 @@
 
 {
   imports = [
-    # Hardware configuration
-    ./hardware.nix
+    # Hardware Configuration
+    ./hardware-configuration.nix
     # ./gpu/nvidia.nix
     # ./gpu/amd.nix
 
     # Modules
-    ./boot.nix
-    ./network.nix
+    ./bootloader.nix
+    ./networking.nix
     ./packages.nix
     ./services.nix
   ];
-
-  nix = {
-    optimise.automatic = true;
-    useSandbox = false;
-
-    gc = {
-      automatic = true;
-      persistent = true;
-      dates = "daily";
-      options = "--delete-older-than 1d";
-    };
-  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   programs.zsh.enable = true;
