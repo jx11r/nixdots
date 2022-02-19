@@ -25,7 +25,7 @@
     # xterm
     alacritty
     unstable.wezterm
-    
+
     # Shell Utilities
     # gitstatus
     # zsh-autosuggestions
