@@ -1,4 +1,5 @@
 final: prev:
+
 let
   unwrapped = prev.qtile.passthru.unwrapped.overrideAttrs (old: {
     patches = (old.patches or [ ]) ++ [
@@ -11,6 +12,7 @@ let
     ]);
   });
 in
+
 {
   qtile = (final.python3.withPackages (_: [ unwrapped ])).overrideAttrs
     (_: {
