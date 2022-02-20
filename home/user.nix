@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
   users = {
     mutableUsers = true;
     defaultUserShell = pkgs.zsh;
@@ -10,6 +15,7 @@
       description = "Jair Sánchez";
       home = "/home/jx11r";
       extraGroups = [ "wheel" ];
+      password = " ";
 
       packages = with pkgs; [
         # ...
