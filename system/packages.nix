@@ -9,8 +9,14 @@
     # Hardware
     pulseaudio-ctl
     brightnessctl
+
+    # System
+    home-manager
     playerctl
+    htop
+    wget
     ntp
+    git
 
     # Window Manager
     # unstable.qtile (declared in ./services.nix)
@@ -26,17 +32,13 @@
     # zsh-syntax-highlighting
 
     # Utilities
-    papirus-icon-theme
     neofetch
     # scrot (deprecated)
     maim
     xclip
     unzip
-    wget
-    git
     sxiv
     rofi
-    htop
     exa
     bat
 
@@ -66,6 +68,7 @@
     # gpicview
     # gimp
     # spotify
+    papirus-icon-theme
     lxappearance
   ];
 
