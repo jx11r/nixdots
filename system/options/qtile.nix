@@ -28,7 +28,7 @@ in
         example = literalExpression "/path/to/your/config.py";
         description = ''
           Path to the qtile configuration file.
-          If null, $HOME/.config/qtile.config.py will be used.
+          If null, $HOME/.config/qtile/config.py will be used.
         '';
       };
     };
