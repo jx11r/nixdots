@@ -19,7 +19,6 @@
     '';
   };
 
-
   # Hardware Aceleration
   hardware.opengl = {
     enable = true;

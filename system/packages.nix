@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../overlays
-  ];
+  imports = [ ../overlays ];
 
   environment.systemPackages = with pkgs; [
     # Hardware
