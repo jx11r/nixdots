@@ -1,16 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-
-    packageOverrides = pkgs: {
-      unstable = import <nixos-unstable> {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
-
   imports = [ ../overlays ];
 
   environment.systemPackages = with pkgs; [
@@ -21,7 +11,7 @@
     ntp
 
     # Window Manager
-    qtile
+    unstable.qtile
 
     # Terminal
     # xterm

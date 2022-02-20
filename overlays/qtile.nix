@@ -7,6 +7,7 @@ let
 
     propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ (with final.python3Packages; [
       dbus-next
+      # iwlib (missing module)
     ]);
   });
 in

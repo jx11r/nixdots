@@ -23,7 +23,7 @@
         session = [{
           name = "qtile";
           start = ''
-            ${pkgs.qtile}/bin/qtile start &
+            ${pkgs.unstable.qtile}/bin/qtile start &
             waitPID=$!
           '';
         }];
