@@ -4,6 +4,7 @@ with lib;
 
 let
   cfg = config.services.xserver.windowManager.qtile;
+  qtile = cfg.package;
 in
 
 {
@@ -24,6 +25,7 @@ in
       configFile = mkOption {
         type = with types; nullOr path;
         default = null;
+        example = literalExpression "/path/to/your/config.py";
         description = ''
           Path to the qtile configuration file.
           If null, $HOME/.config/qtile.config.py will be used.
@@ -36,13 +38,13 @@ in
     services.xserver.windowManager.session = [{
       name = "qtile";
       start = ''
-        ${cfg.package}/bin/qtile start ${optionalString (cfg.configFile != null)
+        ${qtile}/bin/qtile start ${optionalString (cfg.configFile != null)
           "--config \"${cfg.configFile}\""
         } &
         waitPID=$!
       '';
     }];
 
-    environment.systemPackages = [ cfg.package ];
+    environment.systemPackages = [ qtile ];
   };
 }
