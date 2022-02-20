@@ -1,16 +1,20 @@
 {
   networking = {
     hostName = "nixos";
-    # wireless.enable = true;
-    # useDHCP = false;
+    useDHCP = false;
 
     # interfaces.ens33 = {
     #   useDHCP = true;
     # };
 
+    wireless = {
+      enable = false;
+      iwd.enable = true;
+    };
+
     networkmanager = {
       enable = true;
-      wifi.backend = "wpa_supplicant";
+      wifi.backend = "iwd";
     };
   };
 }
