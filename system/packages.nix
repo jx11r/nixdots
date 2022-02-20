@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../overlays ];
+  imports = [
+    ../overlays
+  ];
 
   environment.systemPackages = with pkgs; [
     # Hardware
@@ -11,7 +13,7 @@
     ntp
 
     # Window Manager
-    unstable.qtile
+    # unstable.qtile (declared in ./services.nix)
 
     # Terminal
     # xterm
@@ -26,7 +28,7 @@
     # Utilities
     papirus-icon-theme
     neofetch
-    # scrot
+    # scrot (deprecated)
     maim
     xclip
     unzip

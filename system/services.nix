@@ -1,6 +1,8 @@
-{ pkgs, ... }:
-
 {
+  imports = [
+    ./options/qtile.nix
+  ];
+
   services = {
     printing.enable = false;
     openssh.enable = true;
@@ -20,13 +22,7 @@
       };
 
       windowManager = {
-        session = [{
-          name = "qtile";
-          start = ''
-            ${pkgs.unstable.qtile}/bin/qtile start &
-            waitPID=$!
-          '';
-        }];
+        qtile.enable = true;
       };
     };
   };
