@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./options/qtile.nix
@@ -22,7 +24,10 @@
       };
 
       windowManager = {
-        qtile.enable = true;
+        qtile = {
+          enable = true;
+          package = pkgs.unstable.qtile;
+        };
       };
     };
   };

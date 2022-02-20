@@ -10,18 +10,39 @@ in
   disabledModules = [ "services/x11/window-managers/qtile.nix" ];
 
   options = {
-    services.xserver.windowManager.qtile.enable = mkEnableOption "qtile";
+    services.xserver.windowManager.qtile = {
+      enable = mkEnableOption "qtile";
+
+      package = mkOption {
+        type = types.package;
+        default = pkgs.qtile;
+        defaultText = literalExpression "pkgs.qtile";
+        example = literalExpression "pkgs.unstable.qtile";
+        description = "Qtile package to use.";
+      };
+
+      configFile = mkOption {
+        type = with types; nullOr path;
+        default = null;
+        description = ''
+          Path to the qtile configuration file.
+          If null, $HOME/.config/qtile.config.py will be used.
+        '';
+      };
+    };
   };
 
   config = mkIf cfg.enable {
     services.xserver.windowManager.session = [{
       name = "qtile";
       start = ''
-        ${pkgs.unstable.qtile}/bin/qtile start &
+        ${cfg.package}/bin/qtile start ${optionalString (cfg.configFile != null)
+          "--config \"${cfg.configFile}\""
+        } &
         waitPID=$!
       '';
     }];
 
-    environment.systemPackages = [ pkgs.unstable.qtile ];
+    environment.systemPackages = [ cfg.package ];
   };
 }
