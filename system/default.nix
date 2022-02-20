@@ -2,8 +2,8 @@
   imports = [
     # Hardware Configuration
     ./hardware-configuration.nix
-    # ./xorg.gpu/nvidia.nix
-    # ./xorg.gpu/amd.nix
+    # ./x.gpu/nvidia.nix
+    # ./x.gpu/amd.nix
 
     # Modules
     ./bootloader.nix
