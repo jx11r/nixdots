@@ -4,69 +4,98 @@
   imports = [ ../overlays ];
 
   environment.systemPackages = with pkgs; [
-    # Hardware
+    # -=[ Hardware ]=-
     pulseaudio-ctl
+    # [x] pulseaudio
+    # [x] openssh
     brightnessctl
 
-    # System
+    # -=[ System ]=-
     home-manager
+    # [x] time
     playerctl
     htop
+    # gtop
+    # gotop
     wget
     ntp
     git
 
-    # Window Manager
-    # unstable.qtile (declared in ./services.nix)
+    # -=[ Window Manager ]=-
+    # [x] unstable.qtile
+    # [ ] bspwm
+    # [ ] sxhkd
 
-    # Terminal
+    # -=[ Display Manager ]=-
+    # [ ] lightdm
+    # [x] sddm
+    # [ ] ly
+    # [ ] startx
+
+    # -=[ Terminal ]=-
     # xterm
     alacritty
     unstable.wezterm
 
-    # Shell Utilities
-    # gitstatus
-    # zsh-autosuggestions
-    # zsh-syntax-highlighting
+    # -=[ Shell ]=-
+    # [ ] bash
+    # [x] dash
+    # [x] zsh
 
-    # Utilities
-    neofetch
+    # -=[ Shell Utilities ]=-
+    # [ ] gitstatus
+    # [x] zsh-autosuggestions
+    # [x] zsh-syntax-highlighting
+
+    # -=[ Utilities ]=-
     # scrot (deprecated)
+    # [ ] picom
+    # peaclock
+    # feh
+    sxiv
+    # dmenu
+    rofi
+    neofetch
+    # cava
     maim
     xclip
     unzip
-    sxiv
-    rofi
     exa
     bat
 
-    # Code Editor
+    # -=[ Code Editor ]=-
     # vscodium
     # emacs
     unstable.neovim
     nano
     vim
 
-    # File Manager
+    # -=[ File Manager ]=-
     xfce.thunar
     xfce.thunar-volman
     ranger
 
-    # Browser
+    # -=[ Browser ]=-
     # ungoogled-chromium
     # qutebrowser
+    # opera
     # w3m
     firefox
 
-    # Social Media
+    # -=[ Social Media ]=-
     # whatsapp-for-linux
     unstable.tdesktop
 
-    # Desktop
+    # -=[ Desktop ]=-
+    papirus-icon-theme
+    # gnome.gnome-screenshot
     # gpicview
+    # vlc
+    # evince
+    # libreoffice
     # gimp
     # spotify
-    papirus-icon-theme
+    # spotify-tui
     lxappearance
   ];
 
