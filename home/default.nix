@@ -12,7 +12,6 @@ in
   ];
 
   home-manager.users.jx11r = {
-
     programs = {
       alacritty = {
         enable = true;

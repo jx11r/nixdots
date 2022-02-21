@@ -31,10 +31,10 @@ let
       white   = "#d1e5ed";
     };
   };
-  
 in
 
 {
+  env.TERM = "xterm-256color";
   colors = material-ocean;
 
   font = {
@@ -45,10 +45,12 @@ in
 
     bold = {
       family = font;
+      style = "Bold";
     };
 
     italic = {
       family = font;
+      style = "Italic";
     };
 
     size = 10.5;
