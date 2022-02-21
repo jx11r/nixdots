@@ -15,7 +15,7 @@
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
-  environment.binsh = "${pkgs.dash}/bin/dash";
+  environment.binsh = "${pkgs.bash}/bin/bash";
 
   console = {
     font = "Lat2-Terminus16";

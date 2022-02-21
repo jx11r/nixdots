@@ -38,8 +38,8 @@
     unstable.wezterm
 
     # -=[ Shell ]=-
-    # [ ] bash
-    # [x] dash
+    # [x] bash
+    # [ ] dash
     # [x] zsh
 
     # -=[ Shell Utilities ]=-
