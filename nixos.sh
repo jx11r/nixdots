@@ -24,6 +24,7 @@ cl7=${white}
 # NixOS Script
 if [ "$(id -u)" != "0" ]; then
   out="This script must be run as root."
+
   echo -e "${cl1}WARNING: ${out}${cl}" 1>&2
   exit 1
 fi
@@ -36,6 +37,7 @@ initial_help() {
 
 help() {
   local tabs="             "
+
   local options="[--install <arg>] [--rebuild] [--update] [--upgrade]"
   options+="\n${tabs}[-c <path> | --config <path>] [--clean] [--skip <arg>]"
   options+="\n${tabs}[--generate-config] [--clone <arg> | --remove <arg>]"
@@ -43,11 +45,16 @@ help() {
 
   initial_help
   echo -e "${tabs}${cl5}${options}${cl}"  
+
+  printf "\n"
+
+  echo -e "${cl7}Do --help to see more information.${cl}"
 }
 
 full_help() {
   help
   printf "\n"
+
   echo -e "${cl7}Hi, welcome to my ${cl4}NixOS${cl7} system!${cl6}  ${cl}"
   echo -e "${cl7}This is a little guide about my installer/manager script.${cl}"
 
@@ -99,36 +106,38 @@ ${cl3}Options:${cl}
 
 options=$(getopt -o "huvc:" -l "install:,rebuild,update,upgrade \
   ,config:,clean,skip,generate-config,clone,remove \
-  ,all,ssh,pull,version" --name "NixOS" -- "$@")
+  ,all,ssh,pull,version" \
+  --name "NixOS" -- "$@")
+
+eval set -- "$options"
 
 [ $? -eq 0 ] || {
   initial_help
   exit 1
 }
-eval set -- "$options"
 
 # Temp output
 temp="${cl1}Coming soon...${cl}"
 
 while true; do
   case "$1" in
-    -h) ACTION="help" ;;
-    --help) ACTION="fullhelp" ;;
-    --install) echo -e $temp ;;
-    --rebuild) ACTION="rebuild" ;;
-    --update) ACTION="update" ;;
-    --upgrade) ACTION="upgrade" ;;
-    -c | --config) shift; CONFIG="$1" ;;
-    --clean) ACTION="clean" ;;
-    --skip) shift; SKIP="$1" ;;
-    --generate-config) echo -e $temp ;;
-    --clone) echo -e $temp ;;
-    --remove) echo -e $temp ;;
-    --all) ALL=true ;;
-    --ssh) SSH=true ;;
-    --pull) PULL=TRUE ;;
-    -u) UPDATE=true ;;
-    -v | --version) ACTION="version" ;;
+    -h                ) ACTION="help" ;;
+    --help            ) ACTION="fullhelp" ;;
+    --install         ) echo -e $temp ;;
+    --rebuild         ) ACTION="rebuild" ;;
+    --update          ) ACTION="update" ;;
+    --upgrade         ) ACTION="upgrade" ;;
+    -c | --config     ) shift; CONFIG="$1" ;;
+    --clean           ) ACTION="clean" ;;
+    --skip            ) shift; SKIP="$1" ;;
+    --generate-config ) echo -e $temp ;;
+    --clone           ) echo -e $temp ;;
+    --remove          ) echo -e $temp ;;
+    --all             ) ALL=true ;;
+    --ssh             ) SSH=true ;;
+    --pull            ) PULL=TRUE ;;
+    -u                ) UPDATE=true ;;
+    -v | --version    ) ACTION="version" ;;
 
     --) shift; break ;;
     *) break ;;
@@ -145,13 +154,15 @@ rebuild() {
 
   if [ $UPDATE ]; then
     if [ $CONFIG ]; then
-      nixos-rebuild switch --upgrade -I nixos-config=$CONFIG
+      nixos-rebuild switch --upgrade \
+      -I nixos-config=$CONFIG
     else
       nixos-rebuild switch --upgrade
     fi
   else
     if [ $CONFIG ]; then
-      nixos-rebuild switch -I nixos-config=$CONFIG
+      nixos-rebuild switch \
+      -I nixos-config=$CONFIG
     else
       nixos-rebuild switch
     fi
@@ -181,20 +192,22 @@ clean() {
 version() {
   echo -e "${cl4}NixOS version:${cl}"
   nixos-version
+
   printf "\n"
+
   echo -e "${cl6}Nix version:${cl}"
   nix --version
 }
 
 if [[ -n $ACTION ]]; then
   case $ACTION in
-    help    ) help ;;
-    fullhelp) full_help ;;
-    rebuild ) rebuild ;;
-    update  ) update ;;
-    upgrade ) upgrade ;;
-    clean   ) clean ;;
-    version ) version ;;
+    help     ) help ;;
+    fullhelp ) full_help ;;
+    rebuild  ) rebuild ;;
+    update   ) update ;;
+    upgrade  ) upgrade ;;
+    clean    ) clean ;;
+    version  ) version ;;
   esac
 else
   initial_help
