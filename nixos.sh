@@ -135,7 +135,7 @@ while true; do
     --remove          ) echo -e $temp ;;
     --all             ) ALL=true ;;
     --ssh             ) SSH=true ;;
-    --pull            ) PULL=TRUE ;;
+    --pull            ) PULL=true ;;
     -u                ) UPDATE=true ;;
     -v | --version    ) ACTION="version" ;;
 
