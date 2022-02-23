@@ -6,6 +6,7 @@
 
   nix = {
     optimise.automatic = true;
+    autoOptimiseStore = true;
     useSandbox = false;
 
     gc = {
