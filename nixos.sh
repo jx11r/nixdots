@@ -184,6 +184,7 @@ upgrade() {
 clean() {
   if [ $ALL ]; then
     nix-collect-garbage -d
+    nix optimise-store
   else
     nix-collect-garbage
   fi
