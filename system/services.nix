@@ -27,6 +27,8 @@
         qtile = {
           enable = true;
           package = pkgs.unstable.qtile;
+          configFile = null;
+          backend = "x11";
         };
       };
     };
