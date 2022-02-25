@@ -38,7 +38,7 @@ in
         type = types.enum [ "x11" "wayland" ];
         default = "x11";
         description = ''
-          Backend to use in Qtile: 
+          Backend to use in qtile: 
           <option>x11</option> or <option>wayland</option>.
         '';
       };
