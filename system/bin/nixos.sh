@@ -23,10 +23,10 @@ cl7=${white}
 
 # NixOS Script
 if [ "$(id -u)" != "0" ]; then
-  out="This script must be run as root."
+    out="This script must be run as root."
 
-  echo -e "${cl1}WARNING: ${out}${cl}" 1>&2
-  exit 1
+    echo -e "${cl1}WARNING: ${out}${cl}" 1>&2
+    exit 1
 fi
 
 initial_help() {
@@ -106,7 +106,7 @@ ${cl3}Options:${cl}
 
 options=$(getopt -o "huvc:" -l "install:,rebuild,update,upgrade \
   ,config:,clean,skip,generate-config,clone,remove \
-  ,all,ssh,pull,version" \
+  ,all,ssh,pull,version,help" \
   --name "NixOS" -- "$@")
 
 eval set -- "$options"

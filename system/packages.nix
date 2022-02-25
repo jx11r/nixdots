@@ -97,7 +97,7 @@
     # spotify
     # spotify-tui
     lxappearance
-  ];
+  ] ++ (import ./bin pkgs);
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
