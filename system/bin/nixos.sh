@@ -38,7 +38,7 @@ initial_help() {
 help() {
   local tabs="             "
 
-  local options="[--install <arg>] [--rebuild] [--update] [--upgrade]"
+  local options="[--install <arg>] [-r | --rebuild] [--update] [--upgrade]"
   options+="\n${tabs}[-c <path> | --config <path>] [--clean] [--skip <arg>]"
   options+="\n${tabs}[--generate-config] [--clone <arg> | --remove <arg>]"
   options+="\n${tabs}[--all] [--ssh] [--pull] [-u] [-v | --version]"
@@ -63,7 +63,7 @@ ${cl3}Options:${cl}
     ${cl5}--install ${cl7}<arg>${cl}
         # ...
 
-    ${cl5}--rebuild${cl}
+    ${cl5}-r, --rebuild${cl}
         # ...
 
     ${cl5}--update${cl}
@@ -104,7 +104,7 @@ ${cl3}Options:${cl}
 "
 }
 
-options=$(getopt -o "huvc:" -l "install:,rebuild,update,upgrade \
+options=$(getopt -o "hruvc:" -l "install:,rebuild,update,upgrade \
   ,config:,clean,skip,generate-config,clone,remove \
   ,all,ssh,pull,version,help" \
   --name "NixOS" -- "$@")
@@ -124,7 +124,7 @@ while true; do
     -h                ) ACTION="help" ;;
     --help            ) ACTION="fullhelp" ;;
     --install         ) echo -e $temp ;;
-    --rebuild         ) ACTION="rebuild" ;;
+    -r | --rebuild    ) ACTION="rebuild" ;;
     --update          ) ACTION="update" ;;
     --upgrade         ) ACTION="upgrade" ;;
     -c | --config     ) shift; CONFIG="$1" ;;
