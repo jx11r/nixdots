@@ -51,6 +51,7 @@ in
 
   syntaxHighlighting = {
     enable = true;
+
     styles = {
       "unknown-token"        = "fg=red";
       "reserved-word"        = "fg=magenta";
