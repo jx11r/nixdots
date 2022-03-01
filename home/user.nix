@@ -11,10 +11,10 @@
     defaultUserShell = pkgs.zsh;
 
     users.jx11r = {
-      isNormalUser = true;
-      description = "Jair Sánchez";
       home = "/home/jx11r";
+      description = "Jair Sánchez";
       extraGroups = [ "wheel" ];
+      isNormalUser = true;
       password = " ";
 
       packages = with pkgs; [
