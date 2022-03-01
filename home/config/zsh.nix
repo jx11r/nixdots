@@ -52,17 +52,17 @@ in
   syntaxHighlighting = {
     enable = true;
     styles = {
-      "unknown-token"    = "fg=red";
-      "reserved-word"    = "fg=magenta";
-      "alias"            = "fg=green";
-      "suffix-alias"     = "fg=magenta";
-      "builtin"          = "fg=green";
-      "function"         = "fg=cyan";
-      "command"          = "fg=green";
-      "precommand"       = "fg=magenta";
-      "commandseparator" = "fg=magenta";
-      "redirection"      = "fg=cyan";
-      "path"             = "fg=blue,underline";
+      "unknown-token"        = "fg=red";
+      "reserved-word"        = "fg=magenta";
+      "alias"                = "fg=green";
+      "suffix-alias"         = "fg=magenta";
+      "builtin"              = "fg=green";
+      "function"             = "fg=cyan";
+      "command"              = "fg=green";
+      "precommand"           = "fg=magenta";
+      "commandseparator"     = "fg=magenta";
+      "redirection"          = "fg=cyan";
+      "path"                 = "fg=blue,underline";
       "single-hyphen-option" = "fg=magenta";
       "double-hyphen-option" = "fg=magenta";
     };
