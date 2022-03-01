@@ -11,7 +11,13 @@ in
     ./user.nix
   ];
 
+  programs.zsh = import ./config/zsh.nix { };
+
   home-manager.users.jx11r = {
+    home.file = {
+      ".zshrc".text = import ./config/zsh_extras.nix { };
+    };
+
     programs = {
       alacritty = {
         enable = true;

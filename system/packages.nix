@@ -5,14 +5,14 @@
 
   environment.systemPackages = with pkgs; [
     # -=[ Hardware ]=-
-    pulseaudio-ctl
     # [x] pulseaudio
     # [x] openssh
+    pulseaudio-ctl
     brightnessctl
 
     # -=[ System ]=-
-    home-manager
     # [x] time
+    home-manager
     playerctl
     htop
     # gtop
@@ -46,10 +46,11 @@
     # [ ] gitstatus
     # [x] zsh-autosuggestions
     # [x] zsh-syntax-highlighting
+    starship
 
     # -=[ Utilities ]=-
-    # scrot (deprecated)
     # [ ] picom
+    # scrot (deprecated)
     # peaclock
     # feh
     sxiv
