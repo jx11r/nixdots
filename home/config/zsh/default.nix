@@ -34,7 +34,6 @@ in
 
 {
   enable = true;
-
   promptInit = ''
     eval "$(starship init zsh)"
   '';
