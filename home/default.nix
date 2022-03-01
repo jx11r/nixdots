@@ -21,7 +21,7 @@ in
     programs = {
       alacritty = {
         enable = true;
-        settings = import ./config/alacritty.nix { };
+        settings = import ./config/alacritty { };
       };
     };
   };
