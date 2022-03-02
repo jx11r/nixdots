@@ -23,6 +23,11 @@ in
         enable = true;
         settings = import ./config/alacritty { };
       };
+
+      starship = {
+        enable = true;
+        settings = import ./config/starship.nix { };
+      };
     };
   };
 }
