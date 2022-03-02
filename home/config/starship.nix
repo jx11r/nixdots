@@ -20,8 +20,11 @@
   fill.symbol = " ";
 
   format = ''
-    $directory$git_branch$git_status$cmd_duration$fill$all$character
+    $directory$git_branch$git_status$cmd_duration
+    $character
   '';
+
+  right_format = "$all";
 
   git_branch.format = "[$symbol$branch]($style) ";
 
