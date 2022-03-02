@@ -1,6 +1,9 @@
 { }:
 
 ''
+  # Fix right prompt
+  ZLE_RPROMPT_INDENT=0
+
   # --==[ Key Bindings ]==--
   bindkey '^ ' autosuggest-accept                    # ctrl + space
   bindkey '^[[7~' beginning-of-line                  # ctrl + a
