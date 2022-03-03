@@ -2,12 +2,13 @@
 
 let
   shellAliases = {
-    "cd.."  = "cd ..";
-    pd      = "pushd";
-    cl      = "clear";
-    tar     = "tar -xf";
-    dload   = "curl -O";
-    grep    = "grep --color=auto";
+    "cd.." = "cd ..";
+    ppd    = "popd";
+    pd     = "pushd";
+    cl     = "clear";
+    tar    = "tar -xf";
+    dload  = "curl -O";
+    grep   = "grep --color=auto";
 
     ls   = "exa --group-directories-first";
     ll   = "exa -la --group-directories-first";
