@@ -34,10 +34,10 @@
     deleted = "-";
   };
 
-  java.format   = " [\${symbol}(\${version})]($style)";
-  nodejs.format = " [$symbol($version)]($style)";
-  lua.format    = " [$symbol($version)]($style)";
-  php.format    = " [$symbol($version)]($style)";
-  python.format = " [\${symbol}\${pyenv_prefix}(\${version})(\($virtualenv\))]($style)";
-  rust.format   = " [$symbol($version)]($style)";
+  java.format   = "[\${symbol}(\${version})]($style)";
+  nodejs.format = "[$symbol($version)]($style)";
+  lua.format    = "[$symbol($version)]($style)";
+  php.format    = "[$symbol($version)]($style)";
+  python.format = "[\${symbol}\${pyenv_prefix}(\${version})( \($virtualenv\))]($style)";
+  rust.format   = "[$symbol($version)]($style)";
 }
