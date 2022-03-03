@@ -103,12 +103,15 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
       fonts = [
+        "CascadiaCode"
+        "FiraCode"
         "JetBrainsMono"
         "Mononoki"
         "SourceCodePro"
       ];
     })
 
+    powerline-fonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
