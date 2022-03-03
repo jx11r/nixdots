@@ -28,6 +28,11 @@ in
         enable = true;
         settings = import ./config/starship.nix { };
       };
+
+      bat = {
+        enable = true;
+        config = import ./config/bat.nix { };
+      };
     };
   };
 }
