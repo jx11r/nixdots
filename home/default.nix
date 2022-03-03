@@ -16,6 +16,7 @@ in
   home-manager.users.jx11r = {
     home.file = {
       ".zshrc".text = import ./config/zsh/extras.nix { };
+      ".config/pulseaudio-ctl/config".text = import ./config/pulse.nix { };
     };
 
     programs = {
