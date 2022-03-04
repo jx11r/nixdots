@@ -1,0 +1,8 @@
+configuration {
+	modi: "window,run,ssh,combi,drun";
+	font: "UbuntuMono Nerd Font 10";
+	show-icons: true;
+	icon-theme: "Papirus";
+}
+
+@theme "themes/custom"
