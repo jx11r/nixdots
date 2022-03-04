@@ -3,7 +3,7 @@ final: prev:
 let
   unwrapped = prev.qtile.passthru.unwrapped.overrideAttrs (old: {
     patches = (old.patches or [ ]) ++ [
-      # Custom patches here
+      ./patches/fix-reload-config.patch
     ];
 
     propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ (with final.python3Packages; [
