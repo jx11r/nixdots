@@ -26,14 +26,18 @@ in
         settings = import ./config/alacritty { };
       };
 
-      starship = {
-        enable = true;
-        settings = import ./config/starship.nix { };
-      };
-
       bat = {
         enable = true;
         config = import ./config/bat.nix { };
+      };
+
+      git = {
+        enable = true;
+      } // (import ./config/git.nix);
+
+      starship = {
+        enable = true;
+        settings = import ./config/starship.nix { };
       };
     };
   };
