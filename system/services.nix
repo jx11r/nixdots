@@ -30,6 +30,10 @@
           configFile = null;
           backend = "x11";
         };
+
+        awesome = {
+          enable = false;
+        };
       };
     };
   };
