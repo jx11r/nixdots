@@ -23,7 +23,7 @@ cl7=${white}
 
 # NixOS Script
 initial_help() {
-  local options="${cl5}[-h | --help] [-v | --version]${cl}"
+  local options="${cl5}[-h | --help] [-v | --version] [--post-install]${cl}"
 
   echo -e "${cl1}Usage:${cl} ${cl2}nixos${cl} ${options}"
 }
@@ -83,7 +83,7 @@ ${cl3}Options:${cl}
 "
 }
 
-options=$(getopt -o "hvruc:" -l "help,version, \
+options=$(getopt -o "hvruc:" -l "help,version,post-install, \
   rebuild,update,pull,config:,clean,all, \
   clone:,remove:,fetch,ssh" \
   --name "NixOS" -- "$@")
@@ -102,6 +102,7 @@ while true; do
   case "$1" in
     -h | --help       ) ACTION="help" ;;
     -v | --version    ) ACTION="version" ;;
+    --post-install    ) ACTION="post" ;;
     -r | --rebuild    ) ACTION="rebuild" ;;
     -u | --update     ) UPDATE=true ;;
     --fetch           ) ACTION="fetch" ;;
@@ -128,6 +129,11 @@ version() {
 
   echo -e "${cl6}Nix version:${cl}"
   nix --version
+}
+
+post() {
+  sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+  sudo nix-channel --update
 }
 
 rebuild() {
@@ -171,6 +177,7 @@ if [[ -n $ACTION ]]; then
   case $ACTION in
     help     ) help ;;
     version  ) version ;;
+    post     ) post ;;
     rebuild  ) rebuild ;;
     fetch    ) fetch ;;
     clean    ) clean ;;
