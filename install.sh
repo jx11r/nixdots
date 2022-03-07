@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Shell Colors
 reset="\033[0m"
 black="\033[1;30m"
 red="\033[1;31m"
@@ -21,7 +20,7 @@ cl5=${magenta}
 cl6=${cyan}
 cl7=${white}
 
-# Base System
+# Installation
 rm system/hardware-configuration.nix
 
 nixos-generate-config --root /mnt
@@ -34,4 +33,4 @@ nixos-install
 
 printf "\n"
 echo -e "${cl1}Don't forget to run ${cl2}nixos ${cl5}--post-install ${cl1}after reboot to finish the system setup.${cl}"
-echo -e "${cl1}The initial user password is: ${cl7}1234${cl}"
+echo -e "${cl1}The initial user password is: ${cl7}nix${cl}"
