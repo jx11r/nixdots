@@ -22,15 +22,8 @@ cl6=${cyan}
 cl7=${white}
 
 # NixOS Script
-if [ "$(id -u)" != "0" ]; then
-  out="This script must be run as root."
-
-  echo -e "${cl1}WARNING: ${out}${cl}" 1>&2
-  exit 1
-fi
-
 initial_help() {
-  local options="${cl5}[-h] [--help]${cl}"
+  local options="${cl5}[-h | --help] [-v | --version]${cl}"
 
   echo -e "${cl1}Usage:${cl} ${cl2}nixos${cl} ${options}"
 }
@@ -38,17 +31,15 @@ initial_help() {
 help() {
   local tabs="             "
 
-  local options="[--install <arg>] [-r | --rebuild] [--update] [--upgrade]"
-  options+="\n${tabs}[-c <path> | --config <path>] [--clean] [--skip <arg>]"
-  options+="\n${tabs}[--generate-config] [--clone <arg> | --remove <arg>]"
-  options+="\n${tabs}[--all] [--ssh] [--pull] [-u] [-v | --version]"
+  local options="[-r | --rebuild] [-u | --update] [--pull]"
+  options+="\n${tabs}[-c <path> | --config <path>] [--clean] [--all]"
+  options+="\n${tabs}[--clone <arg> | --remove <arg>] [--fetch] [--ssh]"
 
   initial_help
   echo -e "${tabs}${cl5}${options}${cl}"  
 
-  printf "\n"
-
-  echo -e "${cl7}Do --help to see more information.${cl}"
+  # printf "\n"
+  # echo -e "${cl7}Do --help to see more information.${cl}"
 }
 
 full_help() {
@@ -60,16 +51,13 @@ full_help() {
 
   echo -e "
 ${cl3}Options:${cl}
-    ${cl5}--install ${cl7}<arg>${cl}
-        # ...
-
     ${cl5}-r, --rebuild${cl}
         # ...
 
-    ${cl5}--update${cl}
+    ${cl5}-u, --update${cl}
         # ...
 
-    ${cl5}--upgrade${cl}
+    ${cl5}--pull${cl}
         # ...
 
     ${cl5}-c, --config ${cl7}<path>${cl}
@@ -78,25 +66,16 @@ ${cl3}Options:${cl}
     ${cl5}--clean${cl}
         # ...
 
-    ${cl5}--skip ${cl7}<arg>${cl}
-        # ...
-
-    ${cl5}--generate-config${cl}
+    ${cl5}--all${cl}
         # ...
 
     ${cl5}--clone, --remove ${cl7}<arg>${cl}
         # ...
 
-    ${cl5}--all${cl}
+    ${cl5}--fetch${cl}
         # ...
 
     ${cl5}--ssh${cl}
-        # ...
-
-    ${cl5}--pull${cl}
-        # ...
-
-    ${cl5}-u${cl}
         # ...
 
     ${cl5}-v, --version${cl}
@@ -104,15 +83,15 @@ ${cl3}Options:${cl}
 "
 }
 
-options=$(getopt -o "hruvc:" -l "install:,rebuild,update,upgrade \
-  ,config:,clean,skip,generate-config,clone,remove \
-  ,all,ssh,pull,version,help" \
+options=$(getopt -o "hvruc:" -l "help,version, \
+  rebuild,update,pull,config:,clean,all, \
+  clone:,remove:,fetch,ssh" \
   --name "NixOS" -- "$@")
 
 eval set -- "$options"
 
 [ $? -eq 0 ] || {
-  initial_help
+  help
   exit 1
 }
 
@@ -121,23 +100,18 @@ temp="${cl1}Coming soon...${cl}"
 
 while true; do
   case "$1" in
-    -h                ) ACTION="help" ;;
-    --help            ) ACTION="fullhelp" ;;
-    --install         ) echo -e $temp ;;
+    -h | --help       ) ACTION="help" ;;
+    -v | --version    ) ACTION="version" ;;
     -r | --rebuild    ) ACTION="rebuild" ;;
-    --update          ) ACTION="update" ;;
-    --upgrade         ) ACTION="upgrade" ;;
+    -u | --update     ) UPDATE=true ;;
+    --fetch           ) ACTION="fetch" ;;
+    --pull            ) PULL=true ;;
     -c | --config     ) shift; CONFIG="$1" ;;
     --clean           ) ACTION="clean" ;;
-    --skip            ) shift; SKIP="$1" ;;
-    --generate-config ) echo -e $temp ;;
+    --all             ) ALL=true ;;
     --clone           ) echo -e $temp ;;
     --remove          ) echo -e $temp ;;
-    --all             ) ALL=true ;;
     --ssh             ) SSH=true ;;
-    --pull            ) PULL=true ;;
-    -u                ) UPDATE=true ;;
-    -v | --version    ) ACTION="version" ;;
 
     --) shift; break ;;
     *) break ;;
@@ -146,50 +120,6 @@ while true; do
 done
 
 # Actions
-rebuild() {
-  [ $PULL ] && {
-    pushd /etc/nixos
-    git pull origin master
-  }
-
-  if [ $UPDATE ]; then
-    if [ $CONFIG ]; then
-      nixos-rebuild switch --upgrade \
-      -I nixos-config=$CONFIG
-    else
-      nixos-rebuild switch --upgrade
-    fi
-  else
-    if [ $CONFIG ]; then
-      nixos-rebuild switch \
-      -I nixos-config=$CONFIG
-    else
-      nixos-rebuild switch
-    fi
-  fi
-}
-
-update() {
-  pushd /etc/nixos
-  git fetch origin master
-  nix-channel --update
-}
-
-upgrade() {
-  pushd /etc/nixos
-  git merge origin master
-  nixos-rebuild switch
-}
-
-clean() {
-  if [ $ALL ]; then
-    nix-collect-garbage -d
-    nix optimise-store
-  else
-    nix-collect-garbage
-  fi
-}
-
 version() {
   echo -e "${cl4}NixOS version:${cl}"
   nixos-version
@@ -200,18 +130,53 @@ version() {
   nix --version
 }
 
+rebuild() {
+  [ $PULL ] && {
+    pushd /etc/nixos
+    sudo git pull origin master
+  }
+
+  if [ $UPDATE ]; then
+    if [ $CONFIG ]; then
+      sudo nixos-rebuild switch --upgrade \
+      -I nixos-config=$CONFIG
+    else
+      sudo nixos-rebuild switch --upgrade
+    fi
+  else
+    if [ $CONFIG ]; then
+      sudo nixos-rebuild switch \
+      -I nixos-config=$CONFIG
+    else
+      sudo nixos-rebuild switch
+    fi
+  fi
+}
+
+fetch() {
+  pushd /etc/nixos
+  sudo git pull origin master
+}
+
+clean() {
+  if [ $ALL ]; then
+    sudo nix-collect-garbage -d
+    sudo nix optimise-store
+  else
+    sudo nix-collect-garbage
+  fi
+}
+
 if [[ -n $ACTION ]]; then
   case $ACTION in
     help     ) help ;;
-    fullhelp ) full_help ;;
-    rebuild  ) rebuild ;;
-    update   ) update ;;
-    upgrade  ) upgrade ;;
-    clean    ) clean ;;
     version  ) version ;;
+    rebuild  ) rebuild ;;
+    fetch    ) fetch ;;
+    clean    ) clean ;;
   esac
 else
-  initial_help
+  help
 fi
 
 exit 0;
