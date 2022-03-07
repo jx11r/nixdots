@@ -32,11 +32,6 @@ nix-channel --update
 
 nixos-install
 
-# Post Install
-pushd /mnt/home/*
-
-git clone https://github.com/jx11r/qtile.git .config/qtile
-
 printf "\n"
 echo -e "${cl1}Don't forget to run ${cl2}nixos ${cl5}--post-install ${cl1}after reboot to finish the system setup.${cl}"
-echo -e "${cl3}The initial user password is: ${cl7}1234${cl}"
+echo -e "${cl1}The initial user password is: ${cl7}1234${cl}"
