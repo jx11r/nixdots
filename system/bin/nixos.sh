@@ -133,10 +133,15 @@ version() {
 
 post() {
   sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  sudo nixos-rebuild switch --upgrade
+  sudo nix-channel --update
 
   rm -rf ~/.config/qtile
-  git clone --depth 1 https://github.com/jx11r/qtile.git ~/.config/qtile
+
+  if [ $SSH ]; then
+    git clone --depth 1 git@github.com:jx11r/qtile.git ~/.config/qtile
+  else
+    git clone --depth 1 https://github.com/jx11r/qtile.git ~/.config/qtile
+  fi
 }
 
 rebuild() {
@@ -165,6 +170,11 @@ rebuild() {
 fetch() {
   pushd /etc/nixos
   sudo git pull origin master
+
+  [ $ALL ] && {
+    pushd ~/.config/qtile
+    git pull origin master
+  }
 }
 
 clean() {
