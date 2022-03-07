@@ -133,7 +133,10 @@ version() {
 
 post() {
   sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  sudo nix-channel --update
+  sudo nixos-rebuild switch --upgrade
+
+  rm -rf ~/.config/qtile
+  git clone --depth 1 https://github.com/jx11r/qtile.git ~/.config/qtile
 }
 
 rebuild() {
