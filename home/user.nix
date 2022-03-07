@@ -15,7 +15,7 @@
       description = "Jair Sánchez";
       extraGroups = [ "wheel" ];
       isNormalUser = true;
-      password = "1234";
+      password = "nix";
 
       packages = with pkgs; [
         # ...
