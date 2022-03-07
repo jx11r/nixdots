@@ -20,7 +20,7 @@
         version = 2;
         devices = [ "nodev" ];
         efiSupport = true;
-        useOSProber = false;
+        useOSProber = true;
         gfxmodeEfi = "1360x768";
       };
 
