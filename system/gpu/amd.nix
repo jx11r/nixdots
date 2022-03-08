@@ -19,9 +19,10 @@
     '';
   };
 
-  # Hardware Aceleration
+  # Hardware Acceleration
   hardware.opengl = {
     enable = true;
+    driSupport = true;
 
     extraPackages = with pkgs; [
       rocm-opencl-icd
@@ -31,7 +32,6 @@
     ];
   };
 
-  hardware.opengl.driSupport = true;
   # For 32 bit applications
   # hardware.opengl.driSupport32Bit = true;
 }
