@@ -49,7 +49,7 @@
     starship
 
     # -=[ Utilities ]=-
-    # [ ] picom
+    # [x] picom
     # scrot (deprecated)
     # peaclock
     # feh

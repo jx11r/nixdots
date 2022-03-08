@@ -9,6 +9,7 @@
     printing.enable = false;
     openssh.enable = true;
     gvfs.enable = true;
+    picom.enable = true;
 
     xserver = {
       enable = true;
