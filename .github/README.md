@@ -38,7 +38,7 @@ Finally, if you're looking for a specific config (check the links), here's a lis
 > - [Nixdots](#nixdots)
 >   - [Why NixOS?](#why-nixos)
 >   - [Installation](#installation)
->     - [Installer](#installer)
+>     - [Script](#script)
 >     - [Manual](#manual)
 
 ## Why NixOS?
@@ -54,7 +54,7 @@ Finally, if you're looking for a specific config (check the links), here's a lis
 2. Format and mount your disks (boot partition in /mnt/boot/efi).
 3. Follow these commands:
 
-### Installer
+### Script
 ```shell
 # Get into a Nix shell with git
 nix-shell -p git
