@@ -20,8 +20,8 @@
 
 Hi, welcome to my NixOS configuration, you probably don't want something related to Nix,
 in this repository I only have my base system and small configurations that I had in my
-[Arch Linux](https://github.com/jx11r/archdots) repository, I changed of distro because I wanted
-a reproducible system and to forget a lot of configuration files, with NixOS I can have everything
+[Arch Linux](https://github.com/jx11r/archdots) repository, I switched distro because I wanted
+a reproducible system and forget a lot of configuration files, with NixOS I can have everything
 in one place and it's very comfortable.
 
 Finally, if you're looking for a specific config (check the links), here's a list of my full setup:
