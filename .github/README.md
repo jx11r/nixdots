@@ -91,4 +91,4 @@ nixos-install
 ```
 
 - Add the root password and reboot the system.
-- Log in as your normal user, the initial password is "nix".
+- Log in as your normal user, the initial password is *nix*.
