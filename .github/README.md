@@ -24,7 +24,7 @@ in this repository I only have my base system and small configurations that I ha
 a reproducible system and forget a lot of configuration files, with NixOS I can have everything
 in one place and it's very comfortable.
 
-Finally, if you're looking for a specific config (check the links), here's a list of my full setup:
+Finally, if you're looking for a specific config (check links), here's a list of my full setup:
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Qtile's bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with starship)
