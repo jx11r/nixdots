@@ -25,7 +25,6 @@ a reproducible system and to forget a lot of configuration files, with NixOS I c
 in one place and it's very comfortable.
 
 Finally, if you're looking for a specific config (check the links), here's a list of my full setup:
-+ **OS**: NixOS
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Qtile's bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with starship)
