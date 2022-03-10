@@ -10,26 +10,26 @@ let
     dload  = "curl -O";
     grep   = "grep --color=auto";
 
-    ls   = "exa --group-directories-first";
-    ll   = "exa -la --group-directories-first";
-    tree = "exa -T ";
-    cat  = "bat";
-    vim  = "nvim";
+    ls     = "exa --group-directories-first";
+    ll     = "exa -la --group-directories-first";
+    tree   = "exa -T ";
+    cat    = "bat";
+    vim    = "nvim";
 
-    gpsh = "git push";
-    gpll = "git pull";
-    gs   = "git status";
-    gr   = "git restore";
-    gd   = "git diff";
-    ga   = "git add";
-    gb   = "git branch";
-    gck  = "git checkout";
-    gsw  = "git switch";
-    gcm  = "git commit -m";
-    gcma = "git commit -a -m";
+    gpsh   = "git push";
+    gpll   = "git pull";
+    gs     = "git status";
+    gr     = "git restore";
+    gd     = "git diff";
+    ga     = "git add";
+    gb     = "git branch";
+    gco    = "git checkout";
+    gsw    = "git switch";
+    gcm    = "git commit -m";
+    gcma   = "git commit -a -m";
 
-    fetch = "neofetch";
-    usage = "du -h";
+    fetch  = "neofetch";
+    usage  = "du -h";
   };
 in
 
