@@ -21,7 +21,7 @@
 Hi, welcome to my NixOS configuration, you're probably not looking for something related to Nix,
 in this repository I only have my base system and small configurations that I had in my
 [Arch Linux](https://github.com/jx11r/archdots) repository, I switched to NixOS because I wanted
-a reproducible system and to forget a lot configuration files, with Nix I can have everything
+a reproducible system and to forget about many configuration files, with Nix I can have everything
 in one place, so it's easier to manage my dotfiles.
 
 Finally, if you're looking for a specific config (check links), here's a list of my full setup:
@@ -36,6 +36,7 @@ Finally, if you're looking for a specific config (check links), here's a list of
 ## Table of Contents
 > - [Nixdots](#nixdots)
 >   - [Why NixOS?](#why-nixos)
+>   - [Getting Started](#getting-started)
 >   - [Installation](#installation)
 >     - [Script](#script)
 >     - [Manual](#manual)
@@ -47,6 +48,9 @@ Finally, if you're looking for a specific config (check links), here's a list of
   - Nix makes it trivial to share development and build environments for your projects, regardless of what programming languages and tools you’re using.
 - **Reliable**
   - Nix ensures that installing or upgrading one package cannot break other packages. It allows you to roll back to previous versions, and ensures that no package is in an inconsistent state during an upgrade.
+
+## Getting Started
+...
 
 ## Installation
 1. Get the [NixOS ISO](https://nixos.org/download.html#nixos-iso) and boot into the installer.
