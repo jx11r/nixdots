@@ -18,11 +18,11 @@
   <img align="left" height="95" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg">
 </a>
 
-Hi, welcome to my NixOS configuration, you probably don't want something related to Nix,
+Hi, welcome to my NixOS configuration, you're probably not looking for something related to Nix,
 in this repository I only have my base system and small configurations that I had in my
-[Arch Linux](https://github.com/jx11r/archdots) repository, I switched distro because I wanted
-a reproducible system and forget a lot of configuration files, with NixOS I can have everything
-in one place and it's very comfortable.
+[Arch Linux](https://github.com/jx11r/archdots) repository, I switched to NixOS because I wanted
+a reproducible system and to forget about many configuration files, with Nix I can have everything
+in one place, so it's easier to manage my dotfiles.
 
 Finally, if you're looking for a specific config (check links), here's a list of my full setup:
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
@@ -49,13 +49,13 @@ Finally, if you're looking for a specific config (check links), here's a list of
   - Nix ensures that installing or upgrading one package cannot break other packages. It allows you to roll back to previous versions, and ensures that no package is in an inconsistent state during an upgrade.
 
 ## Installation
-1. Get the latest NixOS [ISO](https://nixos.org/download.html#nixos-iso) and boot into the installer/environment.
+1. Get the [NixOS ISO](https://nixos.org/download.html#nixos-iso) and boot into the installer.
 2. Format and mount your disks (boot partition in /mnt/boot/efi).
 3. Follow these commands:
 
 ### Script
 ```shell
-# Get into a Nix shell with git
+# Get git with Nix Shell
 nix-shell -p git
 
 # Clone this repository and access it
@@ -68,7 +68,7 @@ cd !$
 
 ### Manual
 ```shell
-# Get into a Nix shell with git
+# Get git with Nix Shell
 nix-shell -p git
 
 # Clone this repository and access it
@@ -92,3 +92,4 @@ nixos-install
 
 - Add the root password and reboot the system.
 - Log in as your normal user, the initial password is *nix*.
+- Once inside, run ```nixos --post-install``` to finish the system setup.
