@@ -91,5 +91,5 @@ nixos-install
 ```
 
 - Add the root password and reboot the system.
-- Log in as your normal user, the initial password is *nix*.
+- Login with your normal user, the initial password is *nix*.
 - Once inside, run ```nixos --post-install``` to finish the system setup.
