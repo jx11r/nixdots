@@ -18,7 +18,7 @@
   <img align="left" height="95" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg">
 </a>
 
-Hi, welcome to my NixOS configuration, you're probably not looking for something related to Nix,
+Hi, welcome to my NixOS system, you're probably not looking for something related to Nix,
 in this repository I only have my base system and small configurations that I had in my
 [Arch Linux](https://github.com/jx11r/archdots) repository, I switched to NixOS because I wanted
 a reproducible system and to forget about many configuration files, with Nix I can have everything
@@ -40,6 +40,9 @@ Finally, if you're looking for a specific config (check links), here's a list of
 >   - [Installation](#installation)
 >     - [Script](#script)
 >     - [Manual](#manual)
+>   - [Roadmap](#roadmap)
+>   - [Contributing](#contributing)
+>   - [Special Thanks](#special-thanks)
 
 ## Why NixOS?
 - **Reproducible**
@@ -50,7 +53,11 @@ Finally, if you're looking for a specific config (check links), here's a list of
   - Nix ensures that installing or upgrading one package cannot break other packages. It allows you to roll back to previous versions, and ensures that no package is in an inconsistent state during an upgrade.
 
 ## Getting Started
-...
+Compared to many NixOS setups, my config can be used on any x86_64 machine without problems,
+the only prerequisite would be to know the basics of NixOS to survive on this rare and unique
+GNU/Linux distribution.
+Also if you use other GPU than Intel, you must specify it in **system/default.nix** to avoid any
+inconvenience, feel free to open an issue if you have complications.
 
 ## Installation
 1. Get the [NixOS ISO](https://nixos.org/download.html#nixos-iso) and boot into the installer.
@@ -96,4 +103,27 @@ nixos-install
 
 - Add the root password and reboot the system.
 - Log in with your user, the initial password is *nix*.
-- Once inside, run ```nixos --post-install``` to finish the system setup.
+- Once inside, run `nixos --post-install` to finish the system setup.
+
+## Roadmap
+- [ ] Finish my NixOS setup
+- [ ] Finish my custom script (nixos.sh)
+- [X] Add an installer script
+- [ ] Add WezTerm configuration
+- [ ] Add screenshots of my desktop
+- [ ] Implement my dmenu/st configuration
+- [ ] Implement Nix Flakes (maybe)
+
+## Contributing
+If you have a suggestion that would make this better, please fork the repo and create a pull request.
+Any contributions you make are greatly appreciated!
+
+1. Fork this repository.
+2. Create your feature branch.
+3. Commit your changes.
+4. Push to the branch.
+5. Open a pull request.
+
+## Special Thanks
+- [nixdots](https://github.com/HBlanqueto/nixdots) by HBlanqueto
+- [dotfiles](https://github.com/adrianrl99/dotfiles) by adrianrl99
