@@ -73,7 +73,7 @@ nix-shell -p git
 git clone https://github.com/jx11r/nixdots.git /mnt/etc/nixos
 cd !$
 
-# Run the installer
+# Run the installer script
 ./install.sh
 ```
 
