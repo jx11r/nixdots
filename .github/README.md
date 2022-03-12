@@ -14,7 +14,7 @@
   </a>
 </div><br>
 
-<a href="https://nixos.org/">
+<a href="https://nixos.org">
   <img align="left" height="95" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg">
 </a>
 
@@ -29,7 +29,7 @@ Finally, if you're looking for a specific config (check links), here's a list of
 + **Bar**: Qtile bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with starship)
 + **Terminal**: ST, WezTerm
-+ **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs/)
++ **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs)
 + **File Manager**: Thunar
 + **Launcher**: [Rofi](https://github.com/jx11r/nixdots/tree/master/home/config/rofi), dmenu
 
@@ -125,5 +125,5 @@ Any contributions you make are greatly appreciated!
 5. Open a pull request
 
 ## Special Thanks
-- [nixdots](https://github.com/HBlanqueto/nixdots) by HBlanqueto
-- [dotfiles](https://github.com/adrianrl99/dotfiles) by adrianrl99
+- [nixdots](https://github.com/HBlanqueto/nixdots) by **HBlanqueto**
+- [dotfiles](https://github.com/adrianrl99/dotfiles) by **adrianrl99**
