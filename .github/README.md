@@ -21,7 +21,7 @@
 Hi, welcome to my NixOS system, you're probably not looking for something related to Nix,
 in this repository I only have my base system and small configurations that I had in my
 [Arch Linux](https://github.com/jx11r/archdots) repository, I switched to NixOS because I wanted
-a reproducible system and to forget about many configuration files, with Nix I can have everything
+a reproducible system and to forget a lot configuration files, with Nix I can have everything
 in one place, so it's easier to manage my dotfiles.
 
 Finally, if you're looking for a specific config (check links), here's a list of my full setup:
@@ -54,9 +54,9 @@ Finally, if you're looking for a specific config (check links), here's a list of
 
 ## Getting Started
 Compared to many NixOS setups, my config can be used on any x86_64 machine without problems,
-the only prerequisite would be to know the basics of NixOS to survive on this rare and unique
+the only prerequisite would be to know the basics of NixOS, to survive on this rare and unique
 GNU/Linux distribution.
-Also if you use other GPU than Intel, you must specify it in **system/default.nix** to avoid any
+Also, if you use an other GPU than Intel, you should specify it in **system/default.nix** to avoid any
 inconvenience, feel free to open an issue if you have complications.
 
 ## Installation
@@ -118,11 +118,11 @@ nixos-install
 If you have a suggestion that would make this better, please fork the repo and create a pull request.
 Any contributions you make are greatly appreciated!
 
-1. Fork this repository.
-2. Create your feature branch.
-3. Commit your changes.
-4. Push to the branch.
-5. Open a pull request.
+1. Fork this repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
 
 ## Special Thanks
 - [nixdots](https://github.com/HBlanqueto/nixdots) by HBlanqueto
