@@ -50,7 +50,7 @@
         xfce.thunar-volman
         ranger
         
-        $ [ Browser ]
+        [ Browser ]
         # ungoogled-chromium
         # qutebrowser
         # opera
