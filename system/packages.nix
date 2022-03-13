@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     pulseaudio-ctl
-    home-manager
     wget
     ntp
     git
