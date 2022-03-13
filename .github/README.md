@@ -54,8 +54,7 @@ Finally, if you're looking for a specific config (check links), here's a list of
 
 ## Getting Started
 Compared to many NixOS setups, my config can be used on any x86_64 machine without problems,
-the only prerequisite would be to know the basics of NixOS, to survive on this rare and unique
-GNU/Linux distribution.
+the only prerequisite would be to know the basics of NixOS.
 Also, if you use an other GPU than Intel, you should specify it in **system/default.nix** to avoid any
 inconvenience, feel free to open an issue if you have complications.
 
