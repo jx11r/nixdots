@@ -28,6 +28,7 @@
         unstable.neovim
         
         # [ Programs ]
+        playerctl
         starship
         exa
         bat
