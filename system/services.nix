@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./options/qtile.nix
+    ./modules/qtile.nix
   ];
 
   services = {
