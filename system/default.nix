@@ -4,7 +4,7 @@
   imports = [
     # Hardware Configuration
     ./hardware-configuration.nix
-    ./gpu/intel.nix
+    # ./gpu/intel.nix
     # ./gpu/nvidia.nix
     # ./gpu/amd.nix
 
