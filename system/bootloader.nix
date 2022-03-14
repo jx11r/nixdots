@@ -9,7 +9,7 @@
     kernelParams = [
       "loglevel=3"
       # "quiet"
-      "acpi_backlight=vendor"
+      # "acpi_backlight=vendor"
     ];
 
     loader = {
