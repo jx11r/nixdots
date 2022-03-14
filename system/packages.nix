@@ -14,7 +14,7 @@
     nano
     vim
   ] ++ (import ./bin pkgs)
-  ++ (import ../packages pkgs);
+  ++ (import ./overrides pkgs);
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override {

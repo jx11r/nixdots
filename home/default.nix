@@ -18,6 +18,7 @@ in
       ".zshrc".text = import ./config/zsh/extras.nix { };
       ".config/pulseaudio-ctl/config".text = import ./config/pulse.nix { };
       ".config/rofi".source = ./config/rofi;
+      ".config/picom.conf".text = import ./config/picom.nix { };
     };
 
     programs = {
