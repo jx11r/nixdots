@@ -18,8 +18,8 @@
 
       displayManager = {
         lightdm.enable = false;
-        startx.enable = false;
-        sddm.enable = true;
+        startx.enable = true;
+        sddm.enable = false;
 
         defaultSession = "none+qtile";
       };
