@@ -13,7 +13,8 @@
     unzip
     nano
     vim
-  ] ++ (import ./bin pkgs);
+  ] ++ (import ./bin pkgs)
+  ++ (import ../packages pkgs);
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
