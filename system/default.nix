@@ -2,18 +2,34 @@
 
 {
   imports = [
-    # Hardware Configuration
     ./hardware-configuration.nix
-    ./gpu/intel.nix
     # ./gpu/nvidia.nix
     # ./gpu/amd.nix
+    ./gpu/intel.nix
 
-    # Modules
     ./bootloader.nix
-    ./networking.nix
     ./packages.nix
     ./services.nix
   ];
+
+  networking = {
+    hostName = "nixos";
+    useDHCP = false;
+
+    # interfaces.ens33 = {
+    #   useDHCP = true;
+    # };
+
+    wireless = {
+      enable = false;
+      iwd.enable = true;
+    };
+
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   environment.binsh = "${pkgs.bash}/bin/bash";
