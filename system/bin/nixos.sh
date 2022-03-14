@@ -31,7 +31,7 @@ initial_help() {
 help() {
   local tabs="             "
 
-  local options="[-r | --rebuild] [-u | --update] [--pull]"
+  local options="[-r | --rebuild] [-u | --update] [--pull] [--generate]"
   options+="\n${tabs}[-c <path> | --config <path>] [--clean] [--all]"
   options+="\n${tabs}[--clone <arg> | --remove <arg>] [--fetch] [--ssh]"
 
@@ -60,6 +60,9 @@ ${cl3}Options:${cl}
     ${cl5}--pull${cl}
         # ...
 
+    ${cl5}--generate${cl}
+        # ...
+
     ${cl5}-c, --config ${cl7}<path>${cl}
         # ...
 
@@ -84,7 +87,7 @@ ${cl3}Options:${cl}
 }
 
 options=$(getopt -o "hvruc:" -l "help,version,post-install, \
-  rebuild,update,pull,config:,clean,all, \
+  rebuild,update,pull,generate,config:,clean,all, \
   clone:,remove:,fetch,ssh" \
   --name "NixOS" -- "$@")
 
@@ -105,13 +108,14 @@ while true; do
     --post-install    ) ACTION="post" ;;
     -r | --rebuild    ) ACTION="rebuild" ;;
     -u | --update     ) UPDATE=true ;;
-    --fetch           ) ACTION="fetch" ;;
     --pull            ) PULL=true ;;
+    --generate        ) ACTION="generate" ;;
     -c | --config     ) shift; CONFIG="$1" ;;
     --clean           ) ACTION="clean" ;;
     --all             ) ALL=true ;;
     --clone           ) echo -e $temp ;;
     --remove          ) echo -e $temp ;;
+    --fetch           ) ACTION="fetch" ;;
     --ssh             ) SSH=true ;;
 
     --) shift; break ;;
@@ -167,14 +171,16 @@ rebuild() {
   fi
 }
 
-fetch() {
-  pushd /etc/nixos
-  sudo git pull origin master
+generate() {
+  local dir="nixdots"
 
-  [ $ALL ] && {
-    pushd ~/.config/qtile
-    git pull origin master
-  }
+  if [[ $(pwd | grep -o "$dir$") == $dir ]]; then
+    rm system/hardware-configuration.nix
+    nixos-generate-config --dir .
+    mv hardware-configuration.nix system/
+  else
+    echo -e "${cl1}You're not in the correct directory: ${cl6}nixdots${cl}"
+  fi
 }
 
 clean() {
@@ -186,14 +192,25 @@ clean() {
   fi
 }
 
+fetch() {
+  pushd /etc/nixos
+  sudo git pull origin master
+
+  [ $ALL ] && {
+    pushd ~/.config/qtile
+    git pull origin master
+  }
+}
+
 if [[ -n $ACTION ]]; then
   case $ACTION in
     help     ) help ;;
     version  ) version ;;
     post     ) post ;;
     rebuild  ) rebuild ;;
-    fetch    ) fetch ;;
+    generate ) generate ;;
     clean    ) clean ;;
+    fetch    ) fetch ;;
   esac
 else
   help
