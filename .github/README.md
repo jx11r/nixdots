@@ -105,11 +105,11 @@ nixos-install
 - Once inside, run `nixos --post-install` to finish the system setup.
 
 ## Roadmap
-- [ ] Finish my NixOS setup
+- [x] ~~Finish my NixOS setup~~
 - [ ] Finish my custom script (nixos.sh)
-- [X] Add an installer script
+- [x] ~~Add an installer script~~
+- [ ] Add gallery section (screenshots)
 - [ ] Add WezTerm configuration
-- [ ] Add screenshots of my desktop
 - [ ] Implement my dmenu/st configuration
 - [ ] Implement Nix Flakes (maybe)
 
