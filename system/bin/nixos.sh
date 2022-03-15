@@ -175,9 +175,9 @@ generate() {
   local dir="nixdots"
 
   if [[ $(pwd | grep -o "$dir$") == $dir ]]; then
-    rm system/hardware-configuration.nix
+    # rm system/hardware-configuration.nix
     nixos-generate-config --dir .
-    mv hardware-configuration.nix system/
+    # mv hardware-configuration.nix system/
   else
     echo -e "${cl1}You're not in the correct directory: ${cl6}nixdots${cl}"
   fi

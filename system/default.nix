@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ../hardware-configuration.nix
     # ./gpu/nvidia.nix
     # ./gpu/amd.nix
     ./gpu/intel.nix

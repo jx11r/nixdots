@@ -86,11 +86,10 @@ git clone https://github.com/jx11r/nixdots.git /mnt/etc/nixos
 cd !$
 
 # Remove old hardware configuration
-rm system/hardware-configuration.nix
+rm hardware-configuration.nix
 
-# Generate a new hardware configuration and move it
+# Generate a new hardware configuration
 nixos-generate-config --root /mnt
-mv hardware-configuration.nix system/
 
 # Add unstable channel
 nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
