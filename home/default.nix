@@ -15,10 +15,12 @@ in
 
   home-manager.users.jx11r = {
     home.file = {
+      ".xinitrc".text = import ./config/xinitrc.nix { };
+      ".zprofile".text = import ./config/zprofile.nix { };
       ".zshrc".text = import ./config/zsh/extras.nix { };
+      ".config/picom.conf".text = import ./config/picom.nix { };
       ".config/pulseaudio-ctl/config".text = import ./config/pulse.nix { };
       ".config/rofi".source = ./config/rofi;
-      ".config/picom.conf".text = import ./config/picom.nix { };
     };
 
     programs = {
