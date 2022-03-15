@@ -15,9 +15,14 @@
     loader = {
       timeout = 15;
 
+      systemd-boot = {
+        enable = false;
+        configurationLimit = 2;
+        consoleMode = "max";
+      };
+
       grub = {
         enable = true;
-        version = 2;
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
