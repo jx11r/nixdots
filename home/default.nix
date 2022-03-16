@@ -28,6 +28,11 @@ in
         executable = true;
         source = ./bin/ssh-start.sh;
       };
+
+      ".local/bin/ssh-key" = {
+        executable = true;
+        source = ./bin/ssh-key.sh;
+      };
     };
 
     programs = {
