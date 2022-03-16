@@ -23,7 +23,7 @@ cl7=${white}
 
 # NixOS Script
 initial_help() {
-  local options="${cl5}[-h | --help] [-v | --version] [--post-install]${cl}"
+  local options="${cl5}[-h | --help] [-v | --version] [--post-install] [--patch]${cl}"
 
   echo -e "${cl1}Usage:${cl} ${cl2}nixos${cl} ${options}"
 }
@@ -86,7 +86,7 @@ ${cl3}Options:${cl}
 "
 }
 
-options=$(getopt -o "hvruc:" -l "help,version,post-install, \
+options=$(getopt -o "hvruc:" -l "help,version,post-install,patch, \
   rebuild,update,pull,generate,config:,clean,all, \
   clone:,remove:,fetch,ssh" \
   --name "NixOS" -- "$@")
@@ -106,6 +106,7 @@ while true; do
     -h | --help       ) ACTION="help" ;;
     -v | --version    ) ACTION="version" ;;
     --post-install    ) ACTION="post" ;;
+    --patch           ) ACTION="patch" ;;
     -r | --rebuild    ) ACTION="rebuild" ;;
     -u | --update     ) UPDATE=true ;;
     --pull            ) PULL=true ;;
@@ -145,6 +146,16 @@ post() {
     git clone --depth 1 git@github.com:jx11r/qtile.git ~/.config/qtile
   else
     git clone --depth 1 https://github.com/jx11r/qtile.git ~/.config/qtile
+  fi
+}
+
+patch() {
+  local dir="nixdots"
+
+  if [[ $(pwd | grep -o "$dir$") == $dir ]]; then
+    patch -p1 < system/overlays/patches/vmware-setup.patch
+  else
+    echo -e "${cl1}You're not in the correct directory: ${cl6}nixdots${cl}"
   fi
 }
 
@@ -207,6 +218,7 @@ if [[ -n $ACTION ]]; then
     help     ) help ;;
     version  ) version ;;
     post     ) post ;;
+    patch    ) patch ;;
     rebuild  ) rebuild ;;
     generate ) generate ;;
     clean    ) clean ;;
