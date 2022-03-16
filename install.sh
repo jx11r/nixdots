@@ -22,7 +22,6 @@ cl7=${white}
 
 # Installation
 rm hardware-configuration.nix
-
 nixos-generate-config --root /mnt
 
 nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
