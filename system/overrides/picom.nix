@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-with pkgs; picom.overrideAttrs (OldAttrs: rec {
+with pkgs;
+
+picom.overrideAttrs (OldAttrs: rec {
   pname = "picom";
   version = "v8";
 
