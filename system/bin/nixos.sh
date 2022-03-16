@@ -153,7 +153,7 @@ patch() {
   local dir="nixdots"
 
   if [[ $(pwd | grep -o "$dir$") == $dir ]]; then
-    patch -p1 < system/overlays/patches/vmware-setup.patch
+    git apply system/overlays/patches/vmware-setup.patch
   else
     echo -e "${cl1}You're not in the correct directory: ${cl6}nixdots${cl}"
   fi
