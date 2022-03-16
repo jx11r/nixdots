@@ -2,20 +2,23 @@
 
 let
   shellAliases = {
-    "cd.." = "cd ..";
+    # System
     ppd    = "popd";
     pd     = "pushd";
+    "cd.." = "cd ..";
     cl     = "clear";
     tar    = "tar -xf";
     dload  = "curl -O";
     grep   = "grep --color=auto";
 
+    # Files
     ls     = "exa --group-directories-first";
     ll     = "exa -la --group-directories-first";
     tree   = "exa -T ";
     cat    = "bat";
     vim    = "nvim";
 
+    # Development
     gpsh   = "git push";
     gpll   = "git pull";
     gs     = "git status";
@@ -28,8 +31,12 @@ let
     gcm    = "git commit -m";
     gcma   = "git commit -a -m";
 
+    # Info
     fetch  = "neofetch";
     usage  = "du -h";
+
+    # SSH
+    ssh-start = "eval \"\$(ssh-agent -s)\"; ssh-start";
   };
 in
 
