@@ -154,6 +154,7 @@ patch() {
 
   if [[ $(pwd | grep -o "$dir$") == $dir ]]; then
     git apply .github/resources/vmware-fix.patch
+    nixos --generate
   else
     echo -e "${cl1}You're not in the correct directory: ${cl6}nixdots${cl}"
   fi
