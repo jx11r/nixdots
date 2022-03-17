@@ -36,12 +36,10 @@ Finally, if you're looking for a specific config (check links), here's a list of
 ## Table of Contents
 > - [Nixdots](#nixdots)
 >   - [Why NixOS?](#why-nixos)
->   - [Getting Started](#getting-started)
 >   - [Installation](#installation)
 >     - [Script](#script)
 >     - [Manual](#manual)
 >   - [Roadmap](#roadmap)
->   - [Contributing](#contributing)
 >   - [Special Thanks](#special-thanks)
 
 ## Why NixOS?
@@ -51,12 +49,6 @@ Finally, if you're looking for a specific config (check links), here's a list of
   - Nix makes it trivial to share development and build environments for your projects, regardless of what programming languages and tools you’re using.
 - **Reliable**
   - Nix ensures that installing or upgrading one package cannot break other packages. It allows you to roll back to previous versions, and ensures that no package is in an inconsistent state during an upgrade.
-
-## Getting Started
-Compared to many NixOS setups, my config can be used on any x86_64 machine without problems,
-the only prerequisite would be to know the basics of NixOS.
-Also, if you use an other GPU than Intel, you should specify it in **system/default.nix** to avoid any
-inconvenience, feel free to open an issue if you have complications.
 
 ## Installation
 1. Get the [NixOS ISO](https://nixos.org/download.html#nixos-iso) and boot into the installer.
@@ -111,16 +103,6 @@ nixos-install
 - [ ] Add WezTerm configuration
 - [ ] Implement my dmenu/st configuration
 - [ ] Implement Nix Flakes (maybe)
-
-## Contributing
-If you have a suggestion that would make this better, please fork the repo and create a pull request.
-Any contributions you make are greatly appreciated!
-
-1. Fork this repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
 
 ## Special Thanks
 - [nixdots](https://github.com/HBlanqueto/nixdots) by **HBlanqueto**
