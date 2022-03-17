@@ -35,14 +35,14 @@ Finally, if you're looking for a specific config (check links), here's a list of
 
 ## Table of Contents
 > - [Nixdots](#nixdots)
->   - [Why NixOS?](#why-nixos)
+>   - [Why Nix?](#why-nix)
 >   - [Installation](#installation)
 >     - [Script](#script)
 >     - [Manual](#manual)
 >   - [Roadmap](#roadmap)
 >   - [Special Thanks](#special-thanks)
 
-## Why NixOS?
+## Why Nix?
 - **Reproducible**
   - Nix builds packages in isolation from each other. This ensures that they are reproducible and don't have undeclared dependencies, so if a package works on one machine, it will also work on another.
 - **Declarative**
