@@ -22,11 +22,11 @@ Hi, welcome to my NixOS system, in this repository I only have my base system an
 Arch Linux repository, if you're looking for a specific config (check links), here's a list of my full setup:
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Default qtile bar
-+ **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with starship)
++ **Shell**: [zsh](/home/config/zsh) (with [starship](/home/config/starship.nix))
 + **Terminal**: ST, WezTerm
 + **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs)
 + **File Manager**: Thunar
-+ **Launcher**: [Rofi](https://github.com/jx11r/nixdots/tree/master/home/config/rofi), dmenu
++ **Launcher**: [Rofi](/home/config/rofi), dmenu
 
 ## Table of Contents
 > - [Nixdots](#nixdots)
