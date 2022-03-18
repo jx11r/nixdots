@@ -15,16 +15,11 @@
 </div><br>
 
 <a href="https://nixos.org">
-  <img align="left" height="95" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg">
+  <img align="right" height="90" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg">
 </a>
 
-Hi, welcome to my NixOS system, you're probably not looking for something related to Nix,
-in this repository I only have my base system and small configurations that I had in my
-[Arch Linux](https://github.com/jx11r/archdots) repository, I switched to NixOS because I wanted
-a reproducible system and to forget a lot of configuration files, with Nix I can have everything
-in one place, so it's easier to manage my dotfiles.
-
-Finally, if you're looking for a specific config (check links), here's a list of my full setup:
+Hi, welcome to my NixOS system, in this repository I only have my base system and small configurations that I had in my old
+Arch Linux repository, if you're looking for a specific config (check links), here's a list of my full setup:
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Default qtile bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with starship)
