@@ -92,7 +92,7 @@ nixos-install
 
 ## Roadmap
 - [x] ~~Finish my NixOS setup~~
-- [x] ~~Finish my custom script
+- [x] ~~Finish my custom script~~
 - [x] ~~Add an installer script~~
 - [ ] Add gallery section (screenshots)
 - [ ] Implement Nix Flakes (maybe)
