@@ -15,7 +15,7 @@
 </div><br>
 
 <a href="https://nixos.org">
-  <img align="right" height="80" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" />
+  <img align="right" height="100" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" />
 </a>
 
 Hi, welcome to my NixOS system, in this repository I only have my base system and small configurations that I had in my old
