@@ -1,25 +1,23 @@
 <div align="center">
   <h1>Nixdots</h1>
   <a href="https://github.com/nixos/nixpkgs">
-    <img src="https://img.shields.io/badge/NixOS-21.11-informational.svg?style=for-the-badge&logo=nixos&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
+    <img src="https://img.shields.io/badge/NixOS-21.11-informational.svg?style=for-the-badge&logo=nixos&color=b4befe&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots">
-    <img src="https://img.shields.io/github/repo-size/jx11r/nixdots?style=for-the-badge&logo=gitbook&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" />
+    <img src="https://img.shields.io/github/repo-size/jx11r/nixdots?style=for-the-badge&logo=gitbook&color=f2cdcd&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots/stargazers">
-    <img src="https://img.shields.io/github/stars/jx11r/nixdots?style=for-the-badge&logo=starship&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41" />
+    <img src="https://img.shields.io/github/stars/jx11r/nixdots?style=for-the-badge&logo=starship&color=94e2d5&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots">
-    <img src="https://badges.pufler.dev/visits/jx11r/nixdots?style=for-the-badge&logo=github&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41" />
+    <img src="https://badges.pufler.dev/visits/jx11r/nixdots?style=for-the-badge&logo=github&color=cba6f7&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
 </div><br>
 
 <a href="https://nixos.org">
-  <img align="right" height="80" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" />
+  <img align="right" height="125" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" />
 </a>
 
-Hi, welcome to my NixOS system, in this repository I only have my base system and small configurations that I had in my old
-Arch Linux repository, if you're looking for a specific config (check links), here's a list of my full setup:
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Default qtile bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with [starship](/home/config/starship.nix))
@@ -100,3 +98,10 @@ nixos-install
 ## Special Thanks
 - [nixdots](https://github.com/HBlanqueto/nixdots) by **HBlanqueto**
 - [dotfiles](https://github.com/adrianrl99/dotfiles) by **adrianrl99**
+
+<p align="center">
+  <a href="https://github.com/jx11r/nixdots/blob/master/LICENSE">
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3.0&colorA=1e1e2e&colorB=b4befe"/>
+  </a>
+</p>
+
