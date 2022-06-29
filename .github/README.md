@@ -19,7 +19,7 @@
 </a>
 
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
-+ **Bar**: Default qtile bar
++ **Bar**: Qtile's Bar
 + **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with [starship](/home/config/starship.nix))
 + **Terminal**: ST, WezTerm
 + **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs)
