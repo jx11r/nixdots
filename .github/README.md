@@ -20,11 +20,11 @@
 
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Qtile's Bar
-+ **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/master/home/config/zsh) (with [starship](/home/config/starship.nix))
++ **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/main/home/config/zsh) (with [starship](/home/config/starship.nix))
 + **Terminal**: WezTerm
 + **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs)
 + **File Manager**: Thunar
-+ **Launcher**: [Rofi](https://github.com/jx11r/nixdots/tree/master/home/config/rofi)
++ **Launcher**: [Rofi](https://github.com/jx11r/nixdots/tree/main/home/config/rofi)
 
 ## Table of Contents
 > - [Nixdots](#nixdots)
@@ -100,7 +100,7 @@ nixos-install
 - [dotfiles](https://github.com/adrianrl99/dotfiles) by **adrianrl99**
 
 <p align="center">
-  <a href="https://github.com/jx11r/nixdots/blob/master/LICENSE">
+  <a href="https://github.com/jx11r/nixdots/blob/main/LICENSE">
     <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3.0&colorA=1e1e2e&colorB=b4befe"/>
   </a>
 </p>
