@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/github/stars/jx11r/nixdots?style=for-the-badge&logo=starship&color=94e2d5&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots">
-    <img src="https://badges.pufler.dev/visits/jx11r/nixdots?style=for-the-badge&logo=github&color=cba6f7&logoColor=cdd6f4&labelColor=1e1e2e" />
+    <img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=jx11r.nixdotss&style=for-the-badge&logo=github&color=cba6f7&logoColor=cdd6f4&labelColor=1e1e2e">
   </a>
 </div><br>
 
