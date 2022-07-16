@@ -20,11 +20,11 @@
 
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
 + **Bar**: Qtile's Bar
-+ **Shell**: [zsh](https://github.com/jx11r/nixdots/tree/main/home/config/zsh) (with [starship](/home/config/starship.nix))
-+ **Terminal**: WezTerm
++ **Shell**: [zsh](/home/config/zsh) (with [starship](/home/config/starship.nix))
++ **Terminal**: [WezTerm](https://github.com/wez/wezterm)
 + **Editor:** [Neovim](https://github.com/jx11r/nvim), [Doom Emacs](https://github.com/hlissner/doom-emacs)
-+ **File Manager**: Thunar
-+ **Launcher**: [Rofi](https://github.com/jx11r/nixdots/tree/main/home/config/rofi)
++ **File Manager**: [Thunar](https://gitlab.xfce.org/xfce/thunar)
++ **Launcher**: [Rofi](/home/config/rofi)
 
 ## Table of Contents
 > - [Nixdots](#nixdots)
