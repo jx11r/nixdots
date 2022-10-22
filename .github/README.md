@@ -3,14 +3,14 @@
   <a href="https://github.com/nixos/nixpkgs">
     <img src="https://img.shields.io/badge/NixOS-21.11-informational.svg?style=for-the-badge&logo=nixos&color=b4befe&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
-  <a href="https://github.com/jx11r/nixdots">
+  <a href="#s">
     <img src="https://img.shields.io/github/repo-size/jx11r/nixdots?style=for-the-badge&logo=gitbook&color=f2cdcd&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots/stargazers">
     <img src="https://img.shields.io/github/stars/jx11r/nixdots?style=for-the-badge&logo=starship&color=94e2d5&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
-  <a href="https://github.com/jx11r/nixdots">
-    <img src="https://shields-io-visitor-counter.herokuapp.com/badge?page=jx11r.nixdotss&style=for-the-badge&logo=github&color=cba6f7&logoColor=cdd6f4&labelColor=1e1e2e" />
+  <a href="https://github.com/jx11r/nixdots/blob/main/LICENSE">
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&color=cba6f7&labelColor=1e1e2e&label=License&message=GPL-3.0" />
   </a>
 </div><br>
 
@@ -98,10 +98,3 @@ nixos-install
 ## Special Thanks
 - [nixdots](https://github.com/HBlanqueto/nixdots) by **HBlanqueto**
 - [dotfiles](https://github.com/adrianrl99/dotfiles) by **adrianrl99**
-
-<p align="center">
-  <a href="https://github.com/jx11r/nixdots/blob/main/LICENSE">
-    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3.0&colorA=1e1e2e&colorB=b4befe"/>
-  </a>
-</p>
-
