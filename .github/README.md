@@ -3,7 +3,7 @@
   <a href="https://github.com/nixos/nixpkgs">
     <img src="https://img.shields.io/badge/NixOS-21.11-informational.svg?style=for-the-badge&logo=nixos&color=b4befe&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
-  <a href="#s">
+  <a href="#Nixdots">
     <img src="https://img.shields.io/github/repo-size/jx11r/nixdots?style=for-the-badge&logo=gitbook&color=f2cdcd&logoColor=cdd6f4&labelColor=1e1e2e" />
   </a>
   <a href="https://github.com/jx11r/nixdots/stargazers">
