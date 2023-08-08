@@ -1,59 +1,33 @@
-{ config, pkgs, ... }:
-
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
+{ inputs, config, lib, pkgs, ... }:
 
 {
-  imports = [
-    (import "${home-manager}/nixos")
-    ./user.nix
-  ];
+  gtk.enable = true;
+  qt.enable = true;
 
-  programs.zsh = import ./config/zsh { };
+  home = {
+    homeDirectory = "/home/jx11r";
+    username = "jx11r";
+    packages = (import ./packages.nix { inherit pkgs; });
 
-  home-manager.users.jx11r = {
-    home.file = {
-      # User Configurations
-      ".xinitrc".text = import ./config/xinitrc.nix { };
-      ".zprofile".text = import ./config/zprofile.nix { };
-      ".zshrc".text = import ./config/zsh/extras.nix { };
-      ".config/picom.conf".text = import ./config/picom.nix { };
-      ".config/pulseaudio-ctl/config".text = import ./config/pulse.nix { };
+    file = {
+      ".xprofile".text = (import ./config/xprofile.nix { });
+      ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
-
-      # User Scripts
-      ".local/bin/ssh-start" = {
-        executable = true;
-        source = ./bin/ssh-start.sh;
-      };
-
-      ".local/bin/ssh-key" = {
-        executable = true;
-        source = ./bin/ssh-key.sh;
-      };
-    };
-
-    programs = {
-      alacritty = {
-        enable = true;
-        settings = import ./config/alacritty { };
-      };
-
-      bat = {
-        enable = true;
-        config = import ./config/bat.nix { };
-      };
-
-      git = {
-        enable = true;
-      } // (import ./config/git.nix);
-
-      starship = {
-        enable = true;
-        settings = import ./config/starship.nix { };
-      };
+      ".config/wezterm".source = ./config/wezterm;
+      ".config/wired/wired.ron".source = ./config/wired.ron;
     };
   };
+
+  programs = {
+    bat = (import ./config/bat.nix { inherit pkgs; });
+    zsh = (import ./config/zsh.nix { });
+
+    starship = {
+      enable = true;
+      settings = (import ./config/starship.nix { });
+    };
+  };
+
+  programs.home-manager.enable = true;
+  home.stateVersion = "23.05";
 }

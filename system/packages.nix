@@ -1,35 +1,73 @@
-{ pkgs, ... }:
+{ extras, inputs, config, pkgs, ... }:
 
 {
-  imports = [ ./overlays ];
+  environment.systemPackages = with pkgs;
+    [
+      alsa-tools
+      alsa-utils
+      bat
+      brightnessctl
+      btop
+      cmake
+      curl
+      exa
+      fd
+      ffmpeg
+      ffmpegthumbnailer
+      fzf
+      gcc
+      gh
+      gparted
+      home-manager
+      icu
+      keepassxc
+      libgsf
+      libnotify
+      libsecret
+      man-pages
+      man-pages-posix
+      neofetch
+      neovim
+      nerdfix
+      nix-prefetch-git
+      nodejs
+      ntfs3g
+      pamixer
+      pavucontrol
+      picom
+      playerctl
+      psmisc
+      ranger
+      ripgrep
+      unrar
+      unzip
+      wget
+      wgetpaste
+      xclip
+      xorg.xkill
+      xorg.xprop
+      xorg.xrandr
+      xorg.xset
+      zip
+    ] ++ (with python3Packages; [
+      # global python packages
+      mypy
+      pip
+      virtualenv
+    ]) ++ [
+      # packages not listed in nixpkgs
+      extras.wired
+    ];
 
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    pulseaudio-ctl
-    wget
-    ntp
-    git
-    xclip
-    unzip
-    nano
-    vim
-  ] ++ (import ./bin pkgs)
-  ++ (import ./overrides pkgs);
+  fonts = {
+    packages = with pkgs; [
+      (nerdfonts.override {
+        fonts = [ "CascadiaCode" "Mononoki" "SourceCodePro" ];
+      })
 
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "CascadiaCode"
-        "FiraCode"
-        "JetBrainsMono"
-        "Mononoki"
-        "SourceCodePro"
-      ];
-    })
-
-    powerline-fonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-  ];
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+    ];
+  };
 }

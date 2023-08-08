@@ -1,39 +1,51 @@
-{ pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
-  imports = [
-    ./modules/qtile.nix
-  ];
-
   services = {
-    printing.enable = false;
-    openssh.enable = true;
+    acpid.enable = true;
+    gnome.at-spi2-core.enable = true;
+    gnome.gnome-keyring.enable = true;
+    geoclue2.enable = true;
     gvfs.enable = true;
+    ntp.enable = true;
     # picom.enable = true;
+    thermald.enable = true;
+    tumbler.enable = true;
+    upower.enable = true;
+
+    dbus = {
+      enable = true;
+      packages = [ pkgs.gcr ];
+    };
+
+    openssh = {
+      enable = true;
+      settings.X11Forwarding = true;
+    };
+
+    pipewire = {
+      enable = true;
+      jack.enable = true;
+      pulse.enable = true;
+
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+    };
 
     xserver = {
       enable = true;
-      layout = "us";
-      libinput.enable = true;
 
       displayManager = {
-        lightdm.enable = false;
-        startx.enable = true;
-        sddm.enable = false;
-
+        lightdm.enable = true;
         defaultSession = "none+qtile";
       };
 
       windowManager = {
         qtile = {
           enable = true;
-          package = pkgs.unstable.qtile;
-          configFile = null;
           backend = "x11";
-        };
-
-        awesome = {
-          enable = false;
         };
       };
     };
