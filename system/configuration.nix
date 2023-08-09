@@ -82,7 +82,9 @@
       home = "/home/jx11r";
       isNormalUser = true;
       password = "nixos";
-      # openssh.authorizedKeys.keys = [ ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNzdmYSFq5Bveey8CVo4+QCPAIDV4Cx0BF1Tjk1ngst jx11r@hotmail.com"
+      ];
     };
   };
 

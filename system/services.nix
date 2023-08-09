@@ -20,7 +20,11 @@
 
     openssh = {
       enable = true;
-      settings.X11Forwarding = true;
+
+      settings = {
+        PasswordAuthentication = false;
+        X11Forwarding = true;
+      };
     };
 
     pipewire = {

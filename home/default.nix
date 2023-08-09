@@ -11,6 +11,7 @@
 
     file = {
       ".xprofile".text = (import ./config/xprofile.nix { });
+      ".zprofile".text = (import ./config/zprofile.nix { });
       ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
