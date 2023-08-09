@@ -31,7 +31,6 @@
     zle -N globalias
     bindkey " " globalias
     bindkey -M isearch " " magic-space
-    ZLE_RPROMPT_INDENT=0
   '';
 
   initExtraBeforeCompInit = ''

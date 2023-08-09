@@ -44,7 +44,6 @@
       syntaxHighlighting.enable = true;
       histSize = 10000;
       promptInit = ''eval "$(${pkgs.starship}/bin/starship init zsh)"'';
-
       interactiveShellInit = "ZLE_RPROMPT_INDENT=0";
 
       setOptions = [
