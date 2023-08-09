@@ -3,6 +3,17 @@
 {
   systemd = {
     user.services = {
+      nm-applet = {
+        description = "Network manager applet";
+        wantedBy = [ "graphical-session.target" ];
+        partOf = [ "graphical-session.target" ];
+        serviceConfig = {
+          ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
+          Restart = "always";
+          RestartSec = 5;
+        };
+      };
+
       picom = {
         description = "Picom composite manager";
         wantedBy = [ "graphical-session.target" ];
@@ -38,7 +49,7 @@
           BusName = "org.freedesktop.Notifications";
           ExecStart = "${extras.wired}/bin/wired";
           Restart = "always";
-          RestartSec = 10;
+          RestartSec = 5;
         };
       };
     };
