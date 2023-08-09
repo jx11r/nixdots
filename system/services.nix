@@ -7,8 +7,8 @@
     gnome.gnome-keyring.enable = true;
     geoclue2.enable = true;
     gvfs.enable = true;
+    logind.killUserProcesses = false;
     ntp.enable = true;
-    # picom.enable = true;
     thermald.enable = true;
     tumbler.enable = true;
     upower.enable = true;
@@ -38,8 +38,12 @@
       enable = true;
 
       displayManager = {
-        lightdm.enable = true;
         defaultSession = "none+qtile";
+
+        lightdm = {
+          enable = true;
+          greeters.gtk.enable = true;
+        };
       };
 
       windowManager = {

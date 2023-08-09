@@ -3,11 +3,22 @@
 {
   systemd = {
     user.services = {
+      picom = {
+        description = "Picom composite manager";
+        wantedBy = [ "graphical-session.target" ];
+        partOf = [ "graphical-session.target" ];
+        serviceConfig = {
+          ExecStart = "${pkgs.picom}/bin/picom";
+          Restart = "always";
+          RestartSec = 3;
+        };
+      };
+
       polkit-gnome-authentication-agent-1 = {
         description = "polkit-gnome-authentication-agent-1";
-        after = [ "graphical-session.target" ];
         wantedBy = [ "graphical-session.target" ];
         wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
         serviceConfig = {
           Type = "simple";
           ExecStart =
@@ -20,12 +31,14 @@
 
       wired = {
         description = "Wired Notification Daemon";
-        partOf = [ "graphical-session.target" ];
         wantedBy = [ "graphical-session.target" ];
+        partOf = [ "graphical-session.target" ];
         serviceConfig = {
           Type = "dbus";
           BusName = "org.freedesktop.Notifications";
           ExecStart = "${extras.wired}/bin/wired";
+          Restart = "always";
+          RestartSec = 10;
         };
       };
     };

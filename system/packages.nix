@@ -44,6 +44,7 @@
       wget
       wgetpaste
       xclip
+      xorg.xinit
       xorg.xkill
       xorg.xprop
       xorg.xrandr
