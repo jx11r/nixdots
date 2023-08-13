@@ -16,6 +16,7 @@
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
       ".config/wired/wired.ron".source = ./config/wired.ron;
+      ".gnupg/gpg-agent.conf".text = (import ./config/gpg-agent.nix { });
     };
   };
 
