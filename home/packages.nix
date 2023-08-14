@@ -13,6 +13,7 @@ with pkgs;
   nil
   nixfmt
   obs-studio
+  onedrive
   papirus-icon-theme
   python3Packages.black
   rofi
