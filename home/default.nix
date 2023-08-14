@@ -1,9 +1,6 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
-  gtk.enable = true;
-  qt.enable = true;
-
   home = {
     homeDirectory = "/home/jx11r";
     username = "jx11r";
@@ -27,6 +24,48 @@
     starship = {
       enable = true;
       settings = (import ./config/starship.nix { });
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    cursorTheme = {
+      name = "Simp1e";
+      package = pkgs.simp1e-cursors;
+    };
+
+    font = {
+      name = "Sans Regular";
+      size = 10;
+    };
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        accent = "lavender";
+        flavor = "mocha";
+      };
+    };
+
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Maroon-dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "maroon" ];
+        size = "standard";
+        tweaks = [ ];
+        variant = "mocha";
+      };
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+
+    style = {
+      package = pkgs.adwaita-qt;
+      name = "adwaita-dark";
     };
   };
 

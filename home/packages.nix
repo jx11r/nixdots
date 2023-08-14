@@ -14,7 +14,6 @@ with pkgs;
   nixfmt
   obs-studio
   onedrive
-  papirus-icon-theme
   python3Packages.black
   rofi
   stylua
