@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -52,7 +52,7 @@
   };
 
   security = {
-    pam.services.lightdm.enableGnomeKeyring = true;
+    pam.services.sddm.enableGnomeKeyring = true;
     polkit.enable = true;
     rtkit.enable = true;
 
@@ -88,5 +88,12 @@
     };
   };
 
-  system.stateVersion = "23.05";
+  system = {
+    activationScripts.postInstallSddm = lib.stringAfter [ "users" ] ''
+      ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/jx11r
+      ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/jx11r/.face.icon || true
+    '';
+
+    stateVersion = "23.05";
+  };
 }

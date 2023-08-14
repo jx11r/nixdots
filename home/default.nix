@@ -7,13 +7,14 @@
     packages = (import ./packages.nix { inherit pkgs; });
 
     file = {
-      ".xprofile".text = (import ./config/xprofile.nix { });
-      ".zprofile".text = (import ./config/zprofile.nix { });
       ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
       ".config/wired/wired.ron".source = ./config/wired.ron;
       ".gnupg/gpg-agent.conf".text = (import ./config/gpg-agent.nix { });
+      ".face.icon".source = ./files/icon.jpeg;
+      ".xprofile".text = (import ./config/xprofile.nix { });
+      ".zprofile".text = (import ./config/zprofile.nix { });
     };
   };
 

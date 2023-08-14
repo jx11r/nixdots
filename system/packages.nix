@@ -32,6 +32,7 @@
       nix-prefetch-git
       nodejs
       ntfs3g
+      numlockx
       pamixer
       pavucontrol
       picom
@@ -39,6 +40,7 @@
       psmisc
       ranger
       ripgrep
+      sddm-chili-theme
       unrar
       unzip
       wget

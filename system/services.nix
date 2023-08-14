@@ -44,9 +44,10 @@
       displayManager = {
         defaultSession = "none+qtile";
 
-        lightdm = {
+        sddm = {
           enable = true;
-          greeters.gtk.enable = true;
+          autoNumlock = true;
+          theme = "chili";
         };
       };
 
