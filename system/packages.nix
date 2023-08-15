@@ -35,7 +35,6 @@
       numlockx
       pamixer
       pavucontrol
-      picom
       playerctl
       psmisc
       ranger

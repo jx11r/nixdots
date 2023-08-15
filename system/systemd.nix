@@ -3,28 +3,6 @@
 {
   systemd = {
     user.services = {
-      nm-applet = {
-        description = "Network manager applet";
-        wantedBy = [ "graphical-session.target" ];
-        partOf = [ "graphical-session.target" ];
-        serviceConfig = {
-          ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
-          Restart = "always";
-          RestartSec = 3;
-        };
-      };
-
-      picom = {
-        description = "Picom composite manager";
-        wantedBy = [ "graphical-session.target" ];
-        partOf = [ "graphical-session.target" ];
-        serviceConfig = {
-          ExecStart = "${pkgs.picom}/bin/picom";
-          Restart = "always";
-          RestartSec = 3;
-        };
-      };
-
       polkit-gnome-authentication-agent-1 = {
         description = "polkit-gnome-authentication-agent-1";
         wantedBy = [ "graphical-session.target" ];

@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ outputs, config, pkgs, ... }:
 
 {
+  imports = [
+    outputs.nixosModules.picom
+  ];
+
   services = {
     acpid.enable = true;
     gnome.at-spi2-core.enable = true;
@@ -9,6 +13,7 @@
     gvfs.enable = true;
     logind.killUserProcesses = false;
     ntp.enable = true;
+    picom.enable = true;
     thermald.enable = true;
     tumbler.enable = true;
     upower.enable = true;

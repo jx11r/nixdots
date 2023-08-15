@@ -1,3 +1,4 @@
 {
-  # my-module = import ./my-module.nix;
+  nm-applet = import ./nm-applet.nix;
+  picom = import ./picom.nix;
 }
