@@ -1,4 +1,4 @@
-{ extras, inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs;
@@ -43,6 +43,7 @@
       sddm-chili-theme
       unrar
       unzip
+      wired
       wget
       wgetpaste
       xclip
@@ -53,19 +54,19 @@
       xorg.xset
       zip
     ] ++ (with python3Packages; [
-      # global python packages
       mypy
       pip
       virtualenv
-    ]) ++ [
-      # packages not listed in nixpkgs
-      extras.wired
-    ];
+    ]);
 
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override {
-        fonts = [ "CascadiaCode" "Mononoki" "SourceCodePro" ];
+        fonts = [
+          "CascadiaCode"
+          "Mononoki"
+          "SourceCodePro"
+        ];
       })
 
       noto-fonts

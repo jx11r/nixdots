@@ -1,30 +1,30 @@
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
   home = {
     homeDirectory = "/home/jx11r";
     username = "jx11r";
-    packages = (import ./packages.nix { inherit pkgs; });
+    packages = import ./packages.nix { inherit pkgs; };
 
     file = {
       ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
       ".config/wired/wired.ron".source = ./config/wired.ron;
-      ".gnupg/gpg-agent.conf".text = (import ./config/gpg-agent.nix { });
+      ".gnupg/gpg-agent.conf".text = import ./config/gpg-agent.nix { };
       ".face.icon".source = ./files/icon.jpeg;
-      ".xprofile".text = (import ./config/xprofile.nix { });
-      ".zprofile".text = (import ./config/zprofile.nix { });
+      ".xprofile".text = import ./config/xprofile.nix { };
+      ".zprofile".text = import ./config/zprofile.nix { };
     };
   };
 
   programs = {
-    bat = (import ./config/bat.nix { inherit pkgs; });
-    zsh = (import ./config/zsh.nix { });
+    bat = import ./config/bat.nix { inherit pkgs; };
+    zsh = import ./config/zsh.nix { };
 
     starship = {
       enable = true;
-      settings = (import ./config/starship.nix { });
+      settings = import ./config/starship.nix { };
     };
   };
 

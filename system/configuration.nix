@@ -1,10 +1,9 @@
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
   imports = [
     ./packages.nix
     ./programs.nix
-
     ./services.nix
     ./systemd.nix
   ];
@@ -32,6 +31,7 @@
   environment = {
     binsh = "${pkgs.bash}/bin/bash";
     localBinInPath = true;
+    pathsToLink = [ "/share/zsh" ];
 
     variables = {
       EDITOR = "${pkgs.neovim}/bin/nvim";
@@ -62,14 +62,16 @@
     };
   };
 
+  system.activationScripts = {
+    postInstallSddm = lib.stringAfter [ "users" ] ''
+      ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/jx11r
+      ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/jx11r/.face.icon || true
+    '';
+  };
+
   time = {
     hardwareClockInLocalTime = true;
     timeZone = "America/Mexico_City";
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   users = {
@@ -88,12 +90,8 @@
     };
   };
 
-  system = {
-    activationScripts.postInstallSddm = lib.stringAfter [ "users" ] ''
-      ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/jx11r
-      ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/jx11r/.face.icon || true
-    '';
-
-    stateVersion = "23.05";
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }

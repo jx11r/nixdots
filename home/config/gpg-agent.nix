@@ -1,4 +1,4 @@
-{ }:
+{}:
 
 ''
   default-cache-ttl 604800

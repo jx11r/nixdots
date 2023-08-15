@@ -1,4 +1,4 @@
-{ extras, inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   systemd = {
@@ -10,7 +10,7 @@
         serviceConfig = {
           ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
           Restart = "always";
-          RestartSec = 5;
+          RestartSec = 3;
         };
       };
 
@@ -32,8 +32,7 @@
         after = [ "graphical-session.target" ];
         serviceConfig = {
           Type = "simple";
-          ExecStart =
-            "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
           Restart = "on-failure";
           RestartSec = 1;
           TimeoutStopSec = 10;
@@ -47,9 +46,9 @@
         serviceConfig = {
           Type = "dbus";
           BusName = "org.freedesktop.Notifications";
-          ExecStart = "${extras.wired}/bin/wired";
+          ExecStart = "${pkgs.wired}/bin/wired";
           Restart = "always";
-          RestartSec = 5;
+          RestartSec = 3;
         };
       };
     };

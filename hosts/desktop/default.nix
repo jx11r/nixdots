@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -10,7 +10,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "quiet" ];
+    # kernelParams = [ "quiet" ];
 
     loader.grub = {
       useOSProber = true;

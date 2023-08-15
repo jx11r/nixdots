@@ -11,7 +11,7 @@ with pkgs;
   gpicview
   lxappearance
   nil
-  nixfmt
+  nixpkgs-fmt
   obs-studio
   onedrive
   python3Packages.black

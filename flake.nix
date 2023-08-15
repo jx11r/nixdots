@@ -11,31 +11,43 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
-
-      extras = {
-        # custom packages
-        wired = inputs.wired.packages.${system}.wired;
-      };
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
-    in {
+    in
+    {
+      # acessible through `nix build`, `nix shell`, etc
+      packages.${system} = import ./pkgs { inherit pkgs; };
+
+      # acessible through `nix develop` or `nix-shell`
+      devShells.${system} = import ./shell.nix { inherit pkgs; };
+
+      # custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs; };
+
+      # reusable nixos modules
+      nixosModules = import ./modules;
+
+      # available through `nixos-rebuild --flake .#<host>`
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit extras inputs system; };
+        "desktop" = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          inherit system;
           modules = [ ./hosts/desktop ];
         };
       };
 
+      # available through `home-manager --flake .#<user>`
       homeConfigurations = {
-        jx11r = home-manager.lib.homeManagerConfiguration {
-          extraSpecialArgs = { inherit inputs; };
-          pkgs = pkgs;
+        "jx11r" = home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = { inherit inputs outputs; };
+          inherit pkgs;
           modules = [ ./home ];
         };
       };
