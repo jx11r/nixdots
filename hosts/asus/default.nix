@@ -9,11 +9,8 @@
 
     loader = {
       efi.efiSysMountPoint = "/boot/efi";
-
-      grub = {
-        gfxmodeEfi = "1920x1080";
-        useOSProber = true;
-      };
+      grub.useOSProber = true;
+      grub2-theme.screen = "1080p";
     };
   };
 

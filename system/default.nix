@@ -7,6 +7,8 @@
     ./programs.nix
     ./services.nix
     ./systemd.nix
+
+    inputs.grub2-themes.nixosModules.default
   ];
 
 
@@ -23,6 +25,13 @@
       enable = true;
       devices = [ "nodev" ];
       efiSupport = true;
+    };
+
+    grub2-theme = {
+      enable = true;
+      footer = true;
+      icon = "color";
+      theme = "stylish";
     };
   };
 
