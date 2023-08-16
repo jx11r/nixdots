@@ -39,10 +39,8 @@
       psmisc
       ranger
       ripgrep
-      sddm-chili
       unrar
       unzip
-      wired
       wget
       wgetpaste
       xclip
@@ -56,7 +54,11 @@
       mypy
       pip
       virtualenv
-    ]);
+    ]) ++ [
+      # packages not listed in nixpkgs
+      sddm-chili
+      wired
+    ];
 
   fonts = {
     packages = with pkgs; [
