@@ -1,30 +1,28 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, config, lib, pkgs, ... }:
 
 {
   imports = [
+    ./nix.nix
     ./packages.nix
     ./programs.nix
     ./services.nix
     ./systemd.nix
   ];
 
+
   i18n.defaultLocale = "en_US.UTF-8";
   console.font = "Lat2-Terminus16";
   sound.enable = true;
 
   boot.loader = {
-    timeout = 15;
+    efi.canTouchEfiVariables = true;
     systemd-boot.enable = false;
+    timeout = 15;
 
     grub = {
       enable = true;
       devices = [ "nodev" ];
       efiSupport = true;
-    };
-
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
     };
   };
 
@@ -42,8 +40,6 @@
 
   networking = {
     hostName = "nixos";
-    useDHCP = false;
-    wireless.enable = false;
 
     networkmanager = {
       enable = true;
@@ -62,21 +58,14 @@
     };
   };
 
-  system.activationScripts = {
-    postInstallSddm = lib.stringAfter [ "users" ] ''
-      ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/jx11r
-      ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/jx11r/.face.icon || true
-    '';
-  };
-
   time = {
     hardwareClockInLocalTime = true;
     timeZone = "America/Mexico_City";
   };
 
   users = {
-    mutableUsers = true;
     defaultUserShell = pkgs.zsh;
+    mutableUsers = true;
 
     users.jx11r = {
       description = "Jair Sanchez";
@@ -84,6 +73,7 @@
       home = "/home/jx11r";
       isNormalUser = true;
       password = "nixos";
+
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNzdmYSFq5Bveey8CVo4+QCPAIDV4Cx0BF1Tjk1ngst jx11r@hotmail.com"
       ];
@@ -93,5 +83,16 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  system = {
+    activationScripts = {
+      postInstallSddm = lib.stringAfter [ "users" ] ''
+        ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/jx11r
+        ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/jx11r/.face.icon || true
+      '';
+    };
+
+    stateVersion = "23.05";
   };
 }

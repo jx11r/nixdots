@@ -47,13 +47,13 @@
       enable = true;
 
       displayManager = {
-        defaultSession = "none+qtile";
-
         sddm = {
           enable = true;
           autoNumlock = true;
           theme = "chili";
         };
+
+        defaultSession = "none+qtile";
       };
 
       windowManager = {

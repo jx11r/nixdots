@@ -14,6 +14,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
+      lib = nixpkgs.lib // home-manager.lib;
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
@@ -22,30 +23,25 @@
       };
     in
     {
-      # acessible through `nix build`, `nix shell`, etc
-      packages.${system} = import ./pkgs { inherit pkgs; };
+      inherit lib;
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
-      # acessible through `nix develop` or `nix-shell`
-      devShells.${system} = import ./shell.nix { inherit pkgs; };
-
-      # custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
 
-      # reusable nixos modules
-      nixosModules = import ./modules;
+      packages.${system} = import ./pkgs { inherit pkgs; };
+      devShells.${system} = import ./shell.nix { inherit pkgs; };
 
-      # available through `nixos-rebuild --flake .#<host>`
       nixosConfigurations = {
-        "desktop" = nixpkgs.lib.nixosSystem {
+        asus = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           inherit system;
-          modules = [ ./hosts/desktop ];
+          modules = [ ./system ./hosts/asus ];
         };
       };
 
-      # available through `home-manager --flake .#<user>`
       homeConfigurations = {
-        "jx11r" = home-manager.lib.homeManagerConfiguration {
+        jx11r = lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs outputs; };
           inherit pkgs;
           modules = [ ./home ];

@@ -1,4 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, config, lib, pkgs, ... }:
+
+let
+  icon = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/jx11r/src/i/img/icon.jpg";
+    sha256 = "1l5w06sbl6m2bc4ysnbqi3xz5fnifiik6sba7g6m60kgh83drlw7";
+  };
+in
 
 {
   home = {
@@ -12,7 +19,7 @@
       ".config/wezterm".source = ./config/wezterm;
       ".config/wired/wired.ron".source = ./config/wired.ron;
       ".gnupg/gpg-agent.conf".text = import ./config/gpg-agent.nix { };
-      ".face.icon".source = ./files/icon.jpeg;
+      ".face.icon".source = icon;
       ".xprofile".text = import ./config/xprofile.nix { };
       ".zprofile".text = import ./config/zprofile.nix { };
     };
