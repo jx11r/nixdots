@@ -39,7 +39,7 @@
       psmisc
       ranger
       ripgrep
-      sddm-chili-theme
+      sddm-chili
       unrar
       unzip
       wired

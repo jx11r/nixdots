@@ -1,3 +1,3 @@
 { pkgs ? (import ../nixpkgs.nix) { } }: {
-  # example = pkgs.callPackage ./example { };
+  sddm-chili = pkgs.callPackage ./sddm-chili.nix { };
 }
