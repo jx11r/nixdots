@@ -4,7 +4,8 @@
   imports = [ ./hardware.nix ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [ ];
 
     loader = {

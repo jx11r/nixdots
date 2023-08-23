@@ -19,7 +19,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = false;
-    timeout = 15;
+    timeout = 60;
 
     grub = {
       enable = true;
