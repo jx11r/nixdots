@@ -1,4 +1,4 @@
-{}:
+{ pkgs }:
 
 {
   enable = true;
@@ -15,6 +15,19 @@
     share = true;
     size = 10000;
   };
+
+  plugins = [
+    {
+      name = "zsh-nix-shell";
+      file = "nix-shell.plugin.zsh";
+      src = pkgs.fetchFromGitHub {
+        owner = "chisui";
+        repo = "zsh-nix-shell";
+        rev = "v0.7.0";
+        sha256 = "sha256-oQpYKBt0gmOSBgay2HgbXiDoZo5FoUKwyHSlUrOAP5E=";
+      };
+    }
+  ];
 
   initExtraFirst = ''
     globalias() {

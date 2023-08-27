@@ -3,9 +3,10 @@
 {
   add_newline = false;
   cmd_duration.min_time = 15000;
-  fill.symbol = " ";
   line_break.disabled = false;
   package.disabled = true;
+  fill.symbol = " ";
+  nix_shell.symbol = "❄️ ";
 
   character = {
     success_symbol = "[λ](bold purple)";

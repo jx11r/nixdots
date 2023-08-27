@@ -27,7 +27,7 @@ in
 
   programs = {
     bat = import ./config/bat.nix { inherit pkgs; };
-    zsh = import ./config/zsh.nix { };
+    zsh = import ./config/zsh.nix { inherit pkgs; };
 
     starship = {
       enable = true;
