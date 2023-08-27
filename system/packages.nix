@@ -41,7 +41,7 @@
       zip
 
       # global python packages
-      (python3.withPackages (pkg: with pkg; [
+      (python3.withPackages (ps: with ps; [
         mypy
         pip
         virtualenv
