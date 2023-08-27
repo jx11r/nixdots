@@ -4,17 +4,24 @@ with pkgs;
 
 [
   brave
+  brightnessctl
   discord
   evince
+  gh
   gimp
   gnome.gnome-screenshot
+  gparted
   gpicview
   lxappearance
+  keepassxc
+  nerdfix
   nil
   nixpkgs-fmt
   obs-studio
   onedrive
-  python3Packages.black
+  pamixer
+  pavucontrol
+  playerctl
   rofi
   stylua
   telegram-desktop
@@ -23,4 +30,12 @@ with pkgs;
   wezterm
   whatsapp-for-linux
   xcolor
+
+  # global python packages
+  (python3.withPackages (pkg: with pkg; [
+    black
+    mypy
+    pip
+    virtualenv
+  ]))
 ]

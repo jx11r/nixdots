@@ -6,7 +6,6 @@
       alsa-tools
       alsa-utils
       bat
-      brightnessctl
       btop
       cmake
       curl
@@ -16,11 +15,8 @@
       ffmpegthumbnailer
       fzf
       gcc
-      gh
-      gparted
       home-manager
       icu
-      keepassxc
       libgsf
       libnotify
       libsecret
@@ -28,14 +24,10 @@
       man-pages-posix
       neofetch
       neovim
-      nerdfix
       nix-prefetch-git
       nodejs
       ntfs3g
       numlockx
-      pamixer
-      pavucontrol
-      playerctl
       psmisc
       ranger
       ripgrep
@@ -50,11 +42,7 @@
       xorg.xrandr
       xorg.xset
       zip
-    ] ++ (with python3Packages; [
-      mypy
-      pip
-      virtualenv
-    ]) ++ [
+
       # packages not listed in nixpkgs
       sddm-chili
       wired
