@@ -31,6 +31,7 @@ in
 
     starship = {
       enable = true;
+      enableZshIntegration = false;
       settings = import ./config/starship.nix { };
     };
   };
