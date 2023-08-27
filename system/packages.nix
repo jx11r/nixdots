@@ -7,21 +7,18 @@
       alsa-utils
       bat
       btop
-      cmake
       curl
       exa
       fd
       ffmpeg
       ffmpegthumbnailer
       fzf
-      gcc
       home-manager
       icu
       libgsf
       libnotify
       libsecret
       man-pages
-      man-pages-posix
       neofetch
       neovim
       nix-prefetch-git
@@ -45,7 +42,6 @@
 
       # global python packages
       (python3.withPackages (pkg: with pkg; [
-        black
         mypy
         pip
         virtualenv

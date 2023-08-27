@@ -77,7 +77,7 @@
     mutableUsers = true;
 
     users.jx11r = {
-      description = "Jair Sanchez";
+      description = "jx11r";
       extraGroups = [ "wheel" "video" ];
       home = "/home/jx11r";
       isNormalUser = true;

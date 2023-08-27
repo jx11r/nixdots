@@ -29,9 +29,7 @@
       homeManagerModules = import ./modules/home-manager;
 
       overlays = import ./overlays { inherit inputs; };
-
       packages.${system} = import ./pkgs { inherit pkgs; };
-      devShells.${system} = import ./shell.nix { inherit pkgs; };
 
       nixosConfigurations = {
         asus = lib.nixosSystem {
