@@ -30,12 +30,4 @@ with pkgs;
   wezterm
   whatsapp-for-linux
   xcolor
-
-  # global python packages
-  (python3.withPackages (pkg: with pkg; [
-    black
-    mypy
-    pip
-    virtualenv
-  ]))
 ]

@@ -43,6 +43,14 @@
       xorg.xset
       zip
 
+      # global python packages
+      (python3.withPackages (pkg: with pkg; [
+        black
+        mypy
+        pip
+        virtualenv
+      ]))
+
       # packages not listed in nixpkgs
       sddm-chili
       wired
