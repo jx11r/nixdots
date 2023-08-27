@@ -60,6 +60,15 @@
         qtile = {
           enable = true;
           backend = "x11";
+          extraPackages = pkg: with pkg; [
+            iwlib
+            qtile-extras
+          ];
+        };
+
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
         };
       };
     };
