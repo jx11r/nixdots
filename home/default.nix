@@ -29,8 +29,20 @@ in
     bat = import ./config/bat.nix { inherit pkgs; };
     zsh = import ./config/zsh.nix { inherit pkgs; };
 
+    bash = {
+      enable = true;
+      enableCompletion = false;
+      historyFileSize = 100000;
+      historyControl = [
+        "erasedups"
+        "ignoredups"
+        "ignorespace"
+      ];
+    };
+
     starship = {
       enable = true;
+      enableBashIntegration = false;
       enableZshIntegration = false;
       settings = import ./config/starship.nix { };
     };

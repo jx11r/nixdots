@@ -4,6 +4,7 @@
   enable = true;
   enableCompletion = true;
   enableGlobalCompInit = true;
+  enableLsColors = true;
   autosuggestions.enable = true;
   syntaxHighlighting.enable = true;
   histSize = 10000;
@@ -23,18 +24,6 @@
     "INTERACTIVE_COMMENTS"
     "SHARE_HISTORY"
   ];
-
-  shellAliases = {
-    "cd.." = "cd ..";
-    cat = "bat";
-    cl = "clear";
-    dload = "curl -O";
-    ls = "exa --group-directories-first";
-    ll = "exa -la --group-directories-first";
-    tree = "exa -T";
-    grep = "grep --color=auto";
-    vi = "nvim";
-  };
 
   syntaxHighlighting = {
     highlighters = [ "main" "brackets" ];
@@ -83,5 +72,4 @@
       "numeric-fd" = "fg=cyan";
     };
   };
-
 }
