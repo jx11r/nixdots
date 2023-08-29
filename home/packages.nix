@@ -23,7 +23,6 @@ with pkgs;
   pavucontrol
   playerctl
   rofi
-  stylua
   telegram-desktop
   vlc
   vscode

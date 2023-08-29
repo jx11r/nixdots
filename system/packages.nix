@@ -23,7 +23,6 @@
       neofetch
       neovim
       nix-prefetch-git
-      nodejs
       ntfs3g
       numlockx
       psmisc
@@ -40,13 +39,6 @@
       xorg.xrandr
       xorg.xset
       zip
-
-      # global python packages
-      (python3.withPackages (ps: with ps; [
-        mypy
-        pip
-        virtualenv
-      ]))
 
       # packages not listed in nixpkgs
       sddm-chili
