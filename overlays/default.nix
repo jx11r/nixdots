@@ -1,5 +1,11 @@
 { inputs, ... }:
 
+let
+  addPatches = pkg: patches: pkg.overrideAttrs (oldAttrs: {
+    patches = (oldAttrs.patches or [ ]) ++ patches;
+  });
+in
+
 {
   additions = final: prev: import ../pkgs { pkgs = final; };
 
@@ -56,5 +62,7 @@
         };
       };
     };
+
+    neofetch = addPatches prev.neofetch [ ./neofetch.patch ];
   };
 }

@@ -39,6 +39,7 @@
     cat = "bat";
     cl = "clear";
     dload = "curl -O";
+    fetch = "neofetch";
     ls = "exa --group-directories-first";
     ll = "exa -la --group-directories-first";
     tree = "exa -T";

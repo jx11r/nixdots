@@ -1,0 +1,12 @@
+diff --git a/neofetch b/neofetch
+index 48b96d21..2a79e4aa 100755
+--- a/neofetch
++++ b/neofetch
+@@ -4733,7 +4733,6 @@ color() {
+ # OTHER
+ 
+ stdout() {
+-    image_backend="off"
+     unset subtitle_color colon_color info_color underline_color bold title_color at_color \
+           text_padding zws reset color_blocks bar_color_elapsed bar_color_total \
+           c1 c2 c3 c4 c5 c6 c7 c8
