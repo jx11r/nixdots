@@ -38,13 +38,13 @@ return {
 
   -- window
   adjust_window_size_when_changing_font_size = false,
-  window_background_opacity = 1.0,
+  window_background_opacity = 0.9,
   window_close_confirmation = 'NeverPrompt',
   window_decorations = 'NONE',
   window_padding = {
-    top = 15,
-    right = 15,
-    bottom = 15,
-    left = 15,
+    top = 25,
+    right = 25,
+    bottom = 25,
+    left = 25,
   },
 }
