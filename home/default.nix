@@ -2,7 +2,7 @@
 
 let
   icon = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/jx11r/src/i/img/icon.jpg";
+    url = "https://raw.githubusercontent.com/jx11r/src/i/icon/jx11r.jpg";
     sha256 = "1l5w06sbl6m2bc4ysnbqi3xz5fnifiik6sba7g6m60kgh83drlw7";
   };
 in

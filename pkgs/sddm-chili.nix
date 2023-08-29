@@ -4,7 +4,7 @@ let
   qtgraphicaleffects = pkgs.libsForQt5.qt5.qtgraphicaleffects;
 
   wallpaper = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/jx11r/src/i/wallpapers/mountain.jpg";
+    url = "https://raw.githubusercontent.com/jx11r/src/i/wal/mountain.jpg";
     sha256 = "05qb2m388r4zxmd6b7sk8x1g0qgj56x6xbk3hk86qcjh6srq3f5a";
   };
 in
