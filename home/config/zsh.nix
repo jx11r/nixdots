@@ -75,6 +75,8 @@
     mktar = "tar cfvz";
     untar = "tar xvf";
     vs = "code --profile";
+    pf = "nix-prefetch-url";
+    pfg = "nix-prefetch-git";
 
     Xp = "Xephyr -screen 1920x1080 :1 &";
     Xp1 = "Xephyr -screen 912x598 :1 &";
