@@ -6,7 +6,6 @@
       alsa-tools
       alsa-utils
       bat
-      btop
       curl
       exa
       fd

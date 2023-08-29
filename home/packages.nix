@@ -5,11 +5,13 @@ with pkgs;
 [
   brave
   brightnessctl
+  btop
   discord
   evince
   gh
   gimp
   gnome.gnome-screenshot
+  gotop
   gparted
   gpicview
   lxappearance
