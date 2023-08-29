@@ -8,6 +8,8 @@ let
 in
 
 {
+  nixpkgs.overlays = outputs.overlays;
+
   home = {
     homeDirectory = "/home/jx11r";
     username = "jx11r";
@@ -29,6 +31,7 @@ in
   programs = {
     bat = import ./config/bat.nix { inherit pkgs; };
     zsh = import ./config/zsh.nix { inherit pkgs; };
+    home-manager.enable = true;
 
     bash = {
       enable = true;
@@ -91,7 +94,6 @@ in
     };
   };
 
-  programs.home-manager.enable = true;
   # systemd.user.startServices = "sd-switch";
   home.stateVersion = "23.05";
 }

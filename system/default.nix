@@ -2,15 +2,19 @@
 
 {
   imports = [
+    inputs.grub2-themes.nixosModules.default
+
     ./nix.nix
     ./packages.nix
     ./programs.nix
     ./services.nix
     ./systemd.nix
-
-    inputs.grub2-themes.nixosModules.default
   ];
 
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = outputs.overlays;
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   console.font = "Lat2-Terminus16";
