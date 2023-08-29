@@ -13,18 +13,21 @@ final: prev:
         };
       };
 
-      qtile = super.qtile.overridePythonAttrs {
-        version = "2023.08.23";
+      qtile = super.qtile.overridePythonAttrs (oldAttrs: {
+        version = "2023.08.29";
+
         src = prev.fetchFromGitHub {
           owner = "qtile";
           repo = "qtile";
-          rev = "9b2aff3b3d4607f3e782afda2ec2a061d7eba9f1";
-          sha256 = "00x8h4jkjc0q4j50bja09gjrqkmlqkkzbpk2riwd32inxbshwhyv";
+          rev = "5711b5e7759c46a3c8a3fbf5e47ed767e91f3821";
+          sha256 = "03m4dy41nppfv0cn8c62xfv8a09gn0pwh7whcc2m0haz5d7xzdqz";
         };
+
         buildInputs = with prev; [
           libinput
           libxkbcommon
         ];
+
         propagatedBuildInputs = (with prev.python3Packages; [
           cairocffi
           dbus-next
@@ -35,22 +38,24 @@ final: prev:
           python-dateutil
           pyxdg
           xkbcommon
-        ]) ++ [
-          self.xcffib
-          prev.pulseaudio
-        ];
-      };
+        ]) ++ [ self.xcffib ];
 
-      qtile-extras = super.qtile-extras.overridePythonAttrs {
+        patches = (oldAttrs.patches or [ ]) ++ [ ];
+      });
+
+      qtile-extras = super.qtile-extras.overridePythonAttrs (oldAttrs: {
         version = "2023.08.13";
         doCheck = false;
+
         src = prev.fetchFromGitHub {
           owner = "elParaguayo";
           repo = "qtile-extras";
           rev = "ed01fd8b94997b2a87eecb9bf48e424be91baf76";
           sha256 = "0jxxk3d75cvr9zbpflk7qmhnyqsrkyzsyqpnzq9wkyncihadm1x4";
         };
-      };
+
+        patches = (oldAttrs.patches or [ ]) ++ [ ];
+      });
     };
   };
 }
