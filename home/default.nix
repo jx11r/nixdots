@@ -14,7 +14,7 @@ in
     packages = import ./packages.nix { inherit pkgs; };
 
     file = {
-      ".config/neofetch".source = ./config/neofetch;
+      ".config/neofetch/config.conf".text = import ./config/neofetch.nix { inherit pkgs; };
       ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
