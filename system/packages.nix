@@ -15,6 +15,7 @@
       fzf
       home-manager
       icu
+      imagemagick
       libgsf
       libnotify
       libsecret
