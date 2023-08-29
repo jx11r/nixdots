@@ -6,17 +6,6 @@
   modifications = final: prev: {
     python3 = prev.python3.override {
       packageOverrides = self: super: {
-        cairocffi = super.cairocffi.overridePythonAttrs rec {
-          pname = "cairocffi";
-          version = "1.6.1";
-          postPatch = "";
-          src = prev.fetchPypi {
-            inherit pname version;
-            sha256 = "78e6bbe47357640c453d0be929fa49cd05cce2e1286f3d2a1ca9cbda7efdb8b7";
-          };
-          propagatedNativeBuildInputs = with prev.python3Packages; [ cffi flit-core ];
-        };
-
         xcffib = super.xcffib.overridePythonAttrs rec {
           pname = "xcffib";
           version = "1.5.0";
@@ -40,6 +29,7 @@
             libxkbcommon
           ];
           propagatedBuildInputs = (with prev.python3Packages; [
+            cairocffi
             dbus-next
             dbus-python
             mpd2
@@ -48,10 +38,10 @@
             python-dateutil
             pyxdg
             xkbcommon
-          ]) ++ (with self; [
-            cairocffi
-            xcffib
-          ]) ++ [ prev.pulseaudio ];
+          ]) ++ [
+            self.xcffib
+            prev.pulseaudio
+          ];
         };
 
         qtile-extras = super.qtile-extras.overridePythonAttrs {
