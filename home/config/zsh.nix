@@ -77,6 +77,7 @@
     vs = "code --profile";
     pf = "nix-prefetch-url";
     pfg = "nix-prefetch-git";
+    ph = "patch -p1 <";
 
     Xp = "Xephyr -screen 1920x1080 :1 &";
     Xp1 = "Xephyr -screen 912x598 :1 &";
