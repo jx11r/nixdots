@@ -25,6 +25,7 @@
       nix-prefetch-git
       ntfs3g
       numlockx
+      nvd
       psmisc
       ranger
       ripgrep
@@ -50,8 +51,8 @@
       (nerdfonts.override {
         fonts = [
           "CascadiaCode"
-          "Mononoki"
-          "SourceCodePro"
+          "Hasklig"
+          "NerdFontsSymbolsOnly"
         ];
       })
 
