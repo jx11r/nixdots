@@ -32,10 +32,10 @@
       packages.${system} = import ./pkgs { inherit pkgs; };
 
       nixosConfigurations = {
-        desktop = lib.nixosSystem {
+        asus = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           inherit system;
-          modules = [ ./system ./hosts/desktop ];
+          modules = [ ./system ./hosts/asus ];
         };
       };
 
