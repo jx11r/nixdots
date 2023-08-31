@@ -12,6 +12,7 @@
       ffmpeg
       ffmpegthumbnailer
       fzf
+      gcc
       home-manager
       icu
       imagemagick

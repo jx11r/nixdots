@@ -65,11 +65,6 @@
             qtile-extras
           ];
         };
-
-        xmonad = {
-          enable = true;
-          enableContribAndExtras = true;
-        };
       };
     };
   };
