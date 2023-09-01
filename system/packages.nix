@@ -44,7 +44,7 @@
       # packages not listed in nixpkgs
       sddm-chili
       wired
-    ];
+    ] ++ (import ./bin pkgs);
 
   fonts = {
     packages = with pkgs; [
