@@ -25,7 +25,7 @@
           Type = "dbus";
           BusName = "org.freedesktop.Notifications";
           ExecStart = "${pkgs.wired}/bin/wired";
-          Restart = "always";
+          Restart = "on-failure";
           RestartSec = 3;
         };
       };

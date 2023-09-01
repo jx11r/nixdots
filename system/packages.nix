@@ -26,7 +26,6 @@
       ntfs3g
       numlockx
       nvd
-      picom
       psmisc
       ranger
       ripgrep

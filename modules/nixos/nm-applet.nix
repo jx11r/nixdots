@@ -29,7 +29,7 @@ in
       partOf = [ "graphical-session.target" ];
       serviceConfig = {
         ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet ${optionalString cfg.indicator "--indicator"}";
-        Restart = "always";
+        Restart = "on-failure";
         RestartSec = 3;
       };
     };

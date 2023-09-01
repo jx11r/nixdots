@@ -26,7 +26,7 @@ in
       partOf = [ "graphical-session.target" ];
       serviceConfig = {
         ExecStart = "${pkgs.picom}/bin/picom";
-        Restart = "always";
+        Restart = "on-failure";
         RestartSec = 3;
       };
     };

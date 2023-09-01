@@ -13,7 +13,7 @@
     gvfs.enable = true;
     logind.killUserProcesses = false;
     ntp.enable = true;
-    picom.enable = false;
+    picom.enable = true;
     thermald.enable = true;
     tumbler.enable = true;
     upower.enable = true;
