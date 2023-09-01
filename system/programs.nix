@@ -15,7 +15,7 @@
     ssh.startAgent = true;
 
     git = import ./config/git.nix { };
-    zsh = import ./config/zsh.nix { inherit pkgs; };
+    zsh = import ./config/zsh.nix pkgs;
 
     bash = {
       enableCompletion = true;

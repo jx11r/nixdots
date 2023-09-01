@@ -13,10 +13,9 @@ in
   home = {
     homeDirectory = "/home/jx11r";
     username = "jx11r";
-    packages = import ./packages.nix { inherit pkgs; };
 
     file = {
-      ".config/neofetch/config.conf".text = import ./config/neofetch.nix { inherit pkgs; };
+      ".config/neofetch/config.conf".text = import ./config/neofetch.nix pkgs;
       ".config/picom/picom.conf".source = ./config/picom.conf;
       ".config/rofi".source = ./config/rofi;
       ".config/wezterm".source = ./config/wezterm;
@@ -29,8 +28,8 @@ in
   };
 
   programs = {
-    bat = import ./config/bat.nix { inherit pkgs; };
-    zsh = import ./config/zsh.nix { inherit pkgs; };
+    bat = import ./config/bat.nix pkgs;
+    zsh = import ./config/zsh.nix pkgs;
     home-manager.enable = true;
 
     bash = {
