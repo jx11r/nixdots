@@ -25,17 +25,15 @@
     in
     {
       inherit lib;
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-
-      overlays = import ./overlays { inherit inputs; };
+      nixosModules = import ./modules;
       packages.${system} = import ./pkgs { inherit pkgs; };
+      formatter.${system} = pkgs.nixpkgs-fmt;
 
       nixosConfigurations = {
-        asus = lib.nixosSystem {
+        desktop = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           inherit system;
-          modules = [ ./system ./hosts/asus ];
+          modules = [ ./system ./hosts/desktop ];
         };
       };
 

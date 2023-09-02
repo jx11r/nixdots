@@ -39,7 +39,7 @@
   };
 
   networking = {
-    hostName = "asus";
+    hostName = "desktop";
     useDHCP = false;
     wireless.enable = false;
   };

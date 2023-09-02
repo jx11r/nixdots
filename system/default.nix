@@ -13,7 +13,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = outputs.overlays;
+    overlays = import ../overlays { inherit inputs; };
   };
 
   i18n.defaultLocale = "en_US.UTF-8";

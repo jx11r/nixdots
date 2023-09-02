@@ -12,9 +12,9 @@ let
 in
 
 overlays ++ builtins.attrValues {
-  additions = final: _: import ../pkgs { pkgs = final; };
+  packages = final: _: import ../pkgs { pkgs = final; };
 
   modifications = final: prev: {
-    neofetch = addPatches prev.neofetch [ ./patches/neofetch.patch ];
+    neofetch = addPatches prev.neofetch [ ./patches/neofetch.diff ];
   };
 }

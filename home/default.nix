@@ -8,7 +8,7 @@ let
 in
 
 {
-  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.overlays = import ../overlays { inherit inputs; };
 
   home = {
     homeDirectory = "/home/jx11r";
