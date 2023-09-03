@@ -75,13 +75,15 @@
     mktar = "tar cfvz";
     untar = "tar xvf";
     vs = "code --profile";
+    nr = "sudo nixos-rebuild switch --flake .";
+    hm = "home-manager switch --flake .";
     pf = "nix-prefetch-url";
     pfg = "nix-prefetch-git";
     ph = "patch -p1 <";
 
     Xp = "Xephyr -screen 1920x1080 :1 &";
-    Xp1 = "Xephyr -screen 912x598 :1 &";
-    Xp2 = "Xephyr -screen 912x498 -screen 912x498 +xinerama :1 &";
+    Xp1 = "Xephyr -screen 1024x598 :1 &";
+    Xp2 = "Xephyr -screen 1024x498 -screen 1024x498 +xinerama :1 &";
     DS = "DISPLAY=:1.0 QTILE_XEPHYR=1 qtile start -l INFO";
 
     ga = "git add";
