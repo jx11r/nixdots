@@ -4,9 +4,8 @@
   imports = [ ./hardware.nix ];
 
   boot = {
-    # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages;
-    kernelParams = [ ];
+    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelParams = [ ];
 
     loader = {
       efi.efiSysMountPoint = "/boot/efi";
