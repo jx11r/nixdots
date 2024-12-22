@@ -15,7 +15,7 @@
 </div><br>
 
 <a href="https://nixos.org">
-  <img align="right" height="130" alt="NixOS" src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" />
+  <img align="right" height="150" alt="NixOS" src="https://raw.githubusercontent.com/jx11r/src/i/icons/nixos.png" />
 </a>
 
 + **WM**: [Qtile](https://github.com/jx11r/qtile)
